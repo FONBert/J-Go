@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>J-Go | Écosystème Numérique Camerounais - Investisseurs</title>
-    <meta name="description" content="J-Go : Plateforme numérique innovante au Cameroun. Recherche d'investisseurs pour financer notre expansion et révolutionner les services de transport et paiement.">
-    <meta name="keywords" content="investissement Cameroun, startup africaine, levée de fonds, transport numérique, fintech Afrique, mobile money, investisseurs startup">
+    <title>J-Go | FinTech </title>
+    <meta name="description" content="J-Go : Super-app camerounaise révolutionnant transport et paiement. Opportunité d'investissement exclusive avec documents complets et espace investisseurs.">
+    <meta name="keywords" content="investissement Cameroun, startup africaine, levée de fonds, business plan, pitch deck, modèle financier">
     <meta name="author" content="J-Go">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -153,7 +153,7 @@
             z-index: 1001;
         }
 
-        /* Hero Section avec fond dynamique */
+        /* Hero Section avec slider d'images */
         .hero {
             padding: 150px 0 80px;
             background: linear-gradient(135deg, rgba(30, 111, 186, 0.1), rgba(244, 197, 66, 0.05));
@@ -422,6 +422,49 @@
             right: 20px;
         }
 
+        /* Pages Container pour les sections supplémentaires */
+        .pages-container {
+            display: none;
+            margin-top: 100px;
+            min-height: calc(100vh - 300px);
+        }
+
+        .page {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Sections principales du site */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: #718096;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
         /* Stats Section */
         .stats {
             padding: 60px 0;
@@ -461,7 +504,6 @@
 
         /* Investisseurs Section */
         .investors-section {
-            padding: 100px 0;
             background: linear-gradient(135deg, rgba(138, 43, 226, 0.05), rgba(30, 111, 186, 0.05));
         }
 
@@ -589,25 +631,7 @@
 
         /* Partenaires Section */
         .partners {
-            padding: 80px 0;
             background: linear-gradient(135deg, rgba(244, 197, 66, 0.05), rgba(46, 139, 87, 0.05));
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--dark-color);
-            margin-bottom: 15px;
-        }
-
-        .section-title p {
-            color: #718096;
-            max-width: 600px;
-            margin: 0 auto;
         }
 
         .partners-container {
@@ -692,7 +716,6 @@
 
         /* Services Section */
         .services {
-            padding: 80px 0;
             background-color: white;
         }
 
@@ -748,15 +771,8 @@
             margin-bottom: 20px;
         }
 
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--dark-color);
-        }
-
         /* App Features Section */
         .app-features {
-            padding: 80px 0;
             background: linear-gradient(135deg, rgba(30, 111, 186, 0.05), rgba(244, 197, 66, 0.05));
         }
 
@@ -798,11 +814,6 @@
             display: block;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
         .feature-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -830,9 +841,104 @@
             color: white;
         }
 
+        /* Documents Section (Pages) */
+        .documents-section {
+            padding: 60px 0;
+        }
+
+        .documents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .document-card {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid #E2E8F0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .document-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--investor-color), var(--primary-color));
+        }
+
+        .document-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--investor-color), var(--primary-color));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            color: white;
+            font-size: 32px;
+        }
+
+        .document-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--accent-color);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .document-features {
+            margin: 25px 0;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+
+        .feature-item i {
+            color: var(--accent-color);
+        }
+
+        .btn-print {
+            margin-top: 20px;
+            width: 100%;
+            padding: 15px;
+            background: var(--investor-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-print:hover {
+            background: #7a1fd1;
+            transform: translateY(-2px);
+        }
+
         /* Formulaire Investisseurs */
         .investor-form-section {
-            padding: 80px 0;
             background: linear-gradient(135deg, var(--investor-color), #7a1fd1);
             color: white;
         }
@@ -885,7 +991,6 @@
 
         /* CTA Section */
         .cta-section {
-            padding: 80px 0;
             background: linear-gradient(135deg, var(--primary-color), #155a9c);
             color: white;
             text-align: center;
@@ -901,23 +1006,6 @@
             width: 100%;
             height: 100%;
             background-image: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%);
-        }
-
-        .cta-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .cta-section p {
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            position: relative;
-            z-index: 1;
         }
 
         .btn-light {
@@ -958,6 +1046,258 @@
         .store-btn:hover {
             background: rgba(255, 255, 255, 0.2);
             transform: translateY(-2px);
+        }
+
+        /* Opportunités Page */
+        .opportunities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .opportunity-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .opportunity-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--investor-color);
+        }
+
+        .opportunity-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            background: var(--investor-color);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .opportunity-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 15px;
+            background: var(--light-color);
+            border-radius: 8px;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--investor-color);
+        }
+
+        /* Processus Page */
+        .process-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 40px auto;
+        }
+
+        .process-step {
+            position: relative;
+            padding: 30px;
+            background: white;
+            border-radius: 16px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--investor-color);
+        }
+
+        .step-number {
+            position: absolute;
+            left: -25px;
+            top: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--investor-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .step-duration {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 5px 10px;
+            background: var(--light-color);
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: var(--text-color);
+        }
+
+        /* FAQ Page */
+        .faq-container {
+            max-width: 800px;
+            margin: 40px auto 0;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            background: var(--light-color);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer.active {
+            padding: 20px;
+            max-height: 500px;
+        }
+
+        /* Événements Page */
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .event-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .event-date {
+            background: var(--investor-color);
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .event-day {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .event-month {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .event-content {
+            padding: 25px;
+        }
+
+        .event-register {
+            margin-top: 20px;
+            width: 100%;
+            padding: 12px;
+            background: var(--investor-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .event-register:hover {
+            background: #7a1fd1;
+        }
+
+        /* Espace Investisseurs */
+        .investor-dashboard {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .dashboard-sidebar {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+        }
+
+        .dashboard-menu {
+            list-style: none;
+        }
+
+        .dashboard-menu li {
+            margin-bottom: 10px;
+        }
+
+        .dashboard-menu a {
+            display: block;
+            padding: 12px 15px;
+            color: var(--text-color);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .dashboard-menu a:hover,
+        .dashboard-menu a.active {
+            background: var(--investor-color);
+            color: white;
+        }
+
+        .dashboard-content {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        .dashboard-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 20px;
+            background: var(--light-color);
+            border-radius: 12px;
         }
 
         /* Footer */
@@ -1112,6 +1452,65 @@
             to { transform: rotate(360deg); }
         }
 
+        /* Content pour impression */
+        .print-content {
+            display: none;
+        }
+
+        @media print {
+            .print-content {
+                display: block;
+                padding: 20px;
+                font-family: 'Inter', sans-serif;
+            }
+            
+            .no-print {
+                display: none !important;
+            }
+            
+            body {
+                background: white !important;
+                color: black !important;
+            }
+            
+            .print-content h1 {
+                color: black !important;
+                text-align: center;
+                margin-bottom: 30px;
+            }
+            
+            .print-content section {
+                page-break-inside: avoid;
+                margin-bottom: 30px;
+            }
+            
+            .print-content .page-break {
+                page-break-before: always;
+            }
+        }
+
+        /* Image Captions */
+        .image-caption {
+            position: absolute;
+            bottom: 80px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+            z-index: 3;
+        }
+
+        .image-caption.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         /* Responsive Design */
         @media (max-width: 992px) {
             .hero-content, .investors-content {
@@ -1145,6 +1544,14 @@
             }
 
             .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .investor-dashboard {
+                grid-template-columns: 1fr;
+            }
+            
+            .documents-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -1213,6 +1620,14 @@
             .form-container {
                 padding: 30px 20px;
             }
+
+            .document-card {
+                padding: 30px 20px;
+            }
+            
+            .opportunity-stats {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1250,6 +1665,18 @@
             .investment-card {
                 padding: 30px 20px;
             }
+
+            .pages-container {
+                margin-top: 80px;
+            }
+            
+            .document-card {
+                padding: 20px 15px;
+            }
+            
+            .process-step {
+                padding: 20px 15px;
+            }
         }
 
         /* Animation Classes */
@@ -1267,28 +1694,6 @@
         .delay-1 { transition-delay: 0.2s; }
         .delay-2 { transition-delay: 0.4s; }
         .delay-3 { transition-delay: 0.6s; }
-
-        /* Image Captions */
-        .image-caption {
-            position: absolute;
-            bottom: 80px;
-            left: 0;
-            width: 100%;
-            text-align: center;
-            color: white;
-            font-size: 1.5rem;
-            font-weight: 600;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.5s ease;
-            z-index: 3;
-        }
-
-        .image-caption.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
     </style>
 </head>
 <body>
@@ -1305,7 +1710,7 @@
                 <div class="logo-img">JG</div>
                 <div>
                     <div class="logo-text">J-Go</div>
-                    <div class="logo-slogan">Investir dans l'avenir numérique</div>
+                    <div class="logo-slogan">Une seule app pour ta ville</div>
                 </div>
             </div>
             
@@ -1314,12 +1719,15 @@
             </button>
             
             <nav class="nav-menu" id="navMenu">
-                <a href="#accueil">Accueil</a>
-                <a href="#investisseurs">Investisseurs</a>
-                <a href="#services">Services</a>
-                <a href="#partenaires">Partenaires</a>
-                <a href="#levée-de-fonds">Levée de Fonds</a>
-                <a href="#contact">Contact</a>
+                <a href="#accueil" class="nav-link active">Accueil</a>
+                <a href="#investisseurs" class="nav-link">Investisseurs</a>
+                <a href="#documents" class="nav-link">Documents</a>
+                <a href="#opportunites" class="nav-link">Opportunités</a>
+                <a href="#processus" class="nav-link">Processus</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+                <a href="#evenements" class="nav-link">Événements</a>
+                <a href="#espace" class="nav-link">Espace</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </nav>
         </div>
     </header>
@@ -1361,8 +1769,8 @@
                         <a href="#investisseurs" class="btn btn-investor">
                             <i class="fas fa-chart-line"></i> Devenir Investisseur
                         </a>
-                        <a href="#levée-de-fonds" class="btn btn-secondary">
-                            <i class="fas fa-file-invoice-dollar"></i> Voir le Business Plan
+                        <a href="#documents" class="btn btn-secondary">
+                            <i class="fas fa-file-invoice-dollar"></i> Voir les Documents
                         </a>
                     </div>
                 </div>
@@ -1456,7 +1864,7 @@
                         </div>
                     </div>
                     
-                    <a href="#investor-form" class="btn btn-investor" style="width: 100%; margin-top: 30px;">
+                    <a href="#levée-de-fonds" class="btn btn-investor" style="width: 100%; margin-top: 30px;">
                         <i class="fas fa-handshake"></i> Exprimer mon intérêt
                     </a>
                 </div>
@@ -1509,7 +1917,7 @@
     </section>
 
     <!-- Section Partenaires -->
-    <section class="partners" id="partenaires">
+    <section class="partners">
         <div class="container">
             <div class="section-title fade-in">
                 <h2>Nos Investisseurs et Partenaires Stratégiques</h2>
@@ -1532,7 +1940,7 @@
         </div>
     </section>
 
-    <!-- Section Services -->
+    <!-- Section Services (Modèle d'Affaires) -->
     <section class="services" id="services">
         <div class="container">
             <div class="section-title fade-in">
@@ -1540,7 +1948,7 @@
                 <p>Multiples sources de revenus et scalabilité garantie</p>
             </div>
             
-            <div class="services-grid">
+            <div class="services-grid" id="servicesGrid">
                 <!-- Les services seront générés dynamiquement par JavaScript -->
             </div>
         </div>
@@ -1595,7 +2003,6 @@
                             <label for="investmentAmount">Montant envisagé (FCFA) *</label>
                             <select id="investmentAmount" name="investmentAmount" required>
                                 <option value="">Sélectionnez un montant</option>
-                                <option value="10-50"> - 10M FCFA</option>
                                 <option value="10-50">10M - 50M FCFA</option>
                                 <option value="50-100">50M - 100M FCFA</option>
                                 <option value="100-250">100M - 250M FCFA</option>
@@ -1624,6 +2031,734 @@
         </div>
     </section>
 
+    <!-- Pages Container pour les sections supplémentaires -->
+    <div class="pages-container" id="pagesContainer">
+        <div class="container">
+            <!-- Page Documents -->
+            <div id="documents-page" class="page">
+                <div class="documents-section">
+                    <h1 style="margin-bottom: 20px;">Documents d'Investissement</h1>
+                    <p style="color: #718096; margin-bottom: 40px; max-width: 800px;">
+                        Téléchargez ou imprimez les documents complets nécessaires pour prendre une décision d'investissement éclairée. 
+                        Tous les documents sont disponibles en format PDF imprimable.
+                    </p>
+                    
+                    <div class="documents-grid">
+                        <!-- Business Plan -->
+                        <div class="document-card">
+                            <div class="document-badge">Mise à jour: Nov 2024</div>
+                            <div class="document-icon">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <h3>Business Plan Complet</h3>
+                            <p>Document stratégique détaillant notre vision, marché, modèle d'affaires, projections et plan de croissance.</p>
+                            
+                            <div class="document-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>80 pages détaillées</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Analyse marché approfondie</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Projections 5 ans</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Plan de mise en œuvre</span>
+                                </div>
+                            </div>
+                            
+                            <button class="btn-print" onclick="printDocument('business-plan')">
+                                <i class="fas fa-print"></i> Imprimer le Business Plan
+                            </button>
+                        </div>
+
+                        <!-- Pitch Deck -->
+                        <div class="document-card">
+                            <div class="document-badge">Version 3.2</div>
+                            <div class="document-icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <h3>Pitch Deck d'Investissement</h3>
+                            <p>Présentation concise de 15 slides pour comprendre rapidement notre opportunité d'investissement.</p>
+                            
+                            <div class="document-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>15 slides impactantes</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Données marché clés</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Équipe dirigeante</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Use of funds détaillé</span>
+                                </div>
+                            </div>
+                            
+                            <button class="btn-print" onclick="printDocument('pitch-deck')">
+                                <i class="fas fa-print"></i> Imprimer le Pitch Deck
+                            </button>
+                        </div>
+
+                        <!-- Modèle Financier -->
+                        <div class="document-card">
+                            <div class="document-badge">Excel + PDF</div>
+                            <div class="document-icon">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                            <h3>Modèle Financier</h3>
+                            <p>Modèle Excel complet avec scénarios multiples, analyse de sensibilité et calculs de retour sur investissement.</p>
+                            
+                            <div class="document-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Projections 5 ans détaillées</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>3 scénarios (Base, Optimiste, Pessimiste)</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Calcul ROI et IRR</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Cash flow, P&L, Balance</span>
+                                </div>
+                            </div>
+                            
+                            <button class="btn-print" onclick="printDocument('modele-financier')">
+                                <i class="fas fa-print"></i> Imprimer le Modèle Financier
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page Opportunités -->
+            <div id="opportunites-page" class="page">
+                <div class="documents-section">
+                    <h1 style="margin-bottom: 20px;">Opportunités d'Investissement</h1>
+                    <p style="color: #718096; margin-bottom: 40px; max-width: 800px;">
+                        Découvrez les différentes opportunités d'investissement dans J-Go, avec des rendements attractifs et des horizons de sortie clairs.
+                    </p>
+                    
+                    <div class="opportunities-grid">
+                        <!-- Série A -->
+                        <div class="opportunity-card">
+                            <div class="opportunity-badge">SÉRIE A</div>
+                            <h3>Levée de Fonds - Série A</h3>
+                            <p style="margin: 15px 0;">500M FCFA pour accélérer l'expansion nationale et développer de nouvelles fonctionnalités.</p>
+                            
+                            <div class="opportunity-stats">
+                                <div class="stat-box">
+                                    <div class="stat-value">2.5Mds</div>
+                                    <div>Valuation pre-money</div>
+                                </div>
+                                <div class="stat-box">
+                                    <div class="stat-value">10M+</div>
+                                    <div>Ticket minimum (FCFA)</div>
+                                </div>
+                                <div class="stat-box">
+                                    <div class="stat-value">65%</div>
+                                    <div>Objectif atteint</div>
+                                </div>
+                                <div class="stat-box">
+                                    <div class="stat-value">3-5 ans</div>
+                                    <div>Horizon d'investissement</div>
+                                </div>
+                            </div>
+                            
+                            <button class="btn-print" style="margin-top: 20px;" onclick="showInterest('serie-a')">
+                                <i class="fas fa-handshake"></i> Exprimer mon intérêt
+                            </button>
+                        </div>
+
+                        <!-- Notes Convertibles -->
+                        <div class="opportunity-card">
+                            <div class="opportunity-badge">NOTES CONVERTIBLES</div>
+                            <h3>Notes Convertibles</h3>
+                            <p style="margin: 15px 0;">Jusqu'à 200M FCFA en notes convertibles avec discount de 20% sur la Série A.</p>
+                            
+                            <div class="opportunity-stats">
+                                <div class="stat-box">
+                                    <div class="stat-value">8%</div>
+                                    <div>Taux d'intérêt</div>
+                                </div>
+                                <div class="stat-box">
+                                    <div class="stat-value">20%</div>
+                                    <div>Discount conversion</div>
+                                </div>
+                                <div class="stat-box">
+                                    <div class="stat-value">18 mois</div>
+                                    <div>Échéance</div>
+                                </div>
+                                <div class="stat-box">
+                                    <div class="stat-value">5M+</div>
+                                    <div>Ticket minimum (FCFA)</div>
+                                </div>
+                            </div>
+                            
+                            <button class="btn-print" style="margin-top: 20px;" onclick="showInterest('notes-convertibles')">
+                                <i class="fas fa-file-contract"></i> Voir les termes
+                            </button>
+                        </div>
+
+                        <!-- Club Deal -->
+                        <div class="opportunity-card">
+                            <div class="opportunity-badge">CLUB DEAL</div>
+                            <h3>Club Deal Stratégique</h3>
+                            <p style="margin: 15px 0;">Réservé aux investisseurs stratégiques souhaitant participer activement à notre croissance.</p>
+                            
+                            <div class="opportunity-stats">
+                                <div class="stat-box">
+                                    <div class="stat-value">100M+</div>
+                                    <div>Investissement minimum</div>
+                                </div>
+                                <div class="stat-box">
+                                    <div class="stat-value">Siège</div>
+                                    <div>Au conseil d'administration</div>
+                                </div>
+                                <div class="stat-box">
+                                    <div class="stat-value">Priorité</div>
+                                    <div>Droit de préemption</div>
+                                </div>
+                                <div class="stat-box">
+                                    <div class="stat-value">5-7 ans</div>
+                                    <div>Horizon de sortie</div>
+                                </div>
+                            </div>
+                            
+                            <button class="btn-print" style="margin-top: 20px;" onclick="showInterest('club-deal')">
+                                <i class="fas fa-crown"></i> Devenir partenaire stratégique
+                            </button>
+                        </div>
+
+                        <!-- ESOP -->
+                        <div class="opportunity-card">
+                            <div class="opportunity-badge">ESOP</div>
+                            <h3>Employee Stock Options</h3>
+                            <p style="margin: 15px 0;">Programme d'options sur actions pour les collaborateurs clés et partenaires stratégiques.</p>
+                            
+                            <div class="opportunity-stats">
+                                <div class="stat-box">
+                                    <div class="stat-value">15%</div>
+                                    <div>Du capital réservé</div>
+                                </div>
+                                <div class="stat-box">
+                                    <div class="stat-value">4 ans</div>
+                                    <div>Vesting period</div>
+                                </div>
+                                <div class="stat-box">
+                                    <div class="stat-value">1 an</div>
+                                    <div>Cliff period</div>
+                                </div>
+                                <div class="stat-box">
+                                    <div class="stat-value">IPO/Acq</div>
+                                    <div>Événement de liquidité</div>
+                                </div>
+                            </div>
+                            
+                            <button class="btn-print" style="margin-top: 20px;" onclick="showInterest('esop')">
+                                <i class="fas fa-users"></i> En savoir plus
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page Processus -->
+            <div id="processus-page" class="page">
+                <div class="documents-section">
+                    <h1 style="margin-bottom: 20px;">Processus d'Investissement</h1>
+                    <p style="color: #718096; margin-bottom: 40px; max-width: 800px;">
+                        Notre processus d'investissement structuré garantit transparence, efficacité et alignement entre J-Go et nos investisseurs.
+                    </p>
+                    
+                    <div class="process-timeline">
+                        <!-- Étape 1 -->
+                        <div class="process-step">
+                            <div class="step-number">1</div>
+                            <h3>Prise de Contact Initiale</h3>
+                            <p>Exprimer votre intérêt via notre formulaire en ligne ou contact direct avec notre équipe investisseurs.</p>
+                            <div class="step-duration">1-2 jours</div>
+                            <div style="margin-top: 15px;">
+                                <strong>Documents requis:</strong>
+                                <ul style="margin-top: 10px; padding-left: 20px;">
+                                    <li>Formulaire d'intérêt d'investissement</li>
+                                    <li>Présentation sommaire de l'investisseur</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Étape 2 -->
+                        <div class="process-step">
+                            <div class="step-number">2</div>
+                            <h3>NDA & Partage de Documents</h3>
+                            <p>Signature d'un accord de confidentialité et partage des documents d'investissement complets.</p>
+                            <div class="step-duration">2-3 jours</div>
+                            <div style="margin-top: 15px;">
+                                <strong>Documents partagés:</strong>
+                                <ul style="margin-top: 10px; padding-left: 20px;">
+                                    <li>Business Plan détaillé</li>
+                                    <li>Pitch Deck d'investissement</li>
+                                    <li>Modèle financier</li>
+                                    <li>Memorandum d'investissement</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Étape 3 -->
+                        <div class="process-step">
+                            <div class="step-number">3</div>
+                            <h3>Due Diligence</h3>
+                            <p>Examen approfondi par l'investisseur avec accès à l'équipe, données opérationnelles et documents légaux.</p>
+                            <div class="step-duration">2-3 semaines</div>
+                            <div style="margin-top: 15px;">
+                                <strong>Processus de due diligence:</strong>
+                                <ul style="margin-top: 10px; padding-left: 20px;">
+                                    <li>Due diligence commerciale</li>
+                                    <li>Due diligence financière</li>
+                                    <li>Due diligence légale</li>
+                                    <li>Due diligence technique</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Étape 4 -->
+                        <div class="process-step">
+                            <div class="step-number">4</div>
+                            <h3>Term Sheet & Négociation</h3>
+                            <p>Préparation et négociation du term sheet définissant les termes clés de l'investissement.</p>
+                            <div class="step-duration">1-2 semaines</div>
+                            <div style="margin-top: 15px;">
+                                <strong>Éléments du term sheet:</strong>
+                                <ul style="margin-top: 10px; padding-left: 20px;">
+                                    <li>Valuation et montant investi</li>
+                                    <li>Droits des investisseurs</li>
+                                    <li>Structure de l'investissement</li>
+                                    <li>Conditions suspensives</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Étape 5 -->
+                        <div class="process-step">
+                            <div class="step-number">5</div>
+                            <h3>Documentation Légale</h3>
+                            <p>Rédaction et finalisation des documents légaux d'investissement par nos avocats.</p>
+                            <div class="step-duration">2-3 semaines</div>
+                            <div style="margin-top: 15px;">
+                                <strong>Documents légaux:</strong>
+                                <ul style="margin-top: 10px; padding-left: 20px;">
+                                    <li>Contrat d'investissement</li>
+                                    <li>Pacte d'actionnaires</li>
+                                    <li>Procès-verbaux d'assemblée</li>
+                                    <li>Documents de transfert</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Étape 6 -->
+                        <div class="process-step">
+                            <div class="step-number">6</div>
+                            <h3>Clôture & Décaissement</h3>
+                            <p>Signature définitive des documents et décaissement des fonds. Bienvenue dans l'aventure J-Go !</p>
+                            <div class="step-duration">1 semaine</div>
+                            <div style="margin-top: 15px;">
+                                <strong>Post-clôture:</strong>
+                                <ul style="margin-top: 10px; padding-left: 20px;">
+                                    <li>Intégration dans l'espace investisseurs</li>
+                                    <li>Premier reporting mensuel</li>
+                                    <li>Invitation au conseil d'administration</li>
+                                    <li>Accès aux rapports trimestriels</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page FAQ -->
+            <div id="faq-page" class="page">
+                <div class="documents-section">
+                    <h1 style="margin-bottom: 20px;">FAQ Investisseurs</h1>
+                    <p style="color: #718096; margin-bottom: 40px; max-width: 800px;">
+                        Réponses aux questions fréquemment posées par nos investisseurs actuels et potentiels.
+                    </p>
+                    
+                    <div class="faq-container">
+                        <!-- Question 1 -->
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(1)">
+                                <span>Quelle est la valuation de J-Go pour la Série A ?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer" id="faq-answer-1">
+                                <p>La valuation pre-money pour notre levée de fonds Série A est fixée à 2,5 milliards FCFA. Cette valuation repose sur :</p>
+                                <ul style="margin-top: 10px; padding-left: 20px;">
+                                    <li>Notre base utilisateurs de 125,000 utilisateurs actifs</li>
+                                    <li>Notre croissance mensuelle de 15%</li>
+                                    <li>Notre position de leader sur le marché camerounais</li>
+                                    <li>Nos revenus récurrents mensuels de 15M FCFA</li>
+                                    <li>Notre technologie brevetée SMS/USSD</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Question 2 -->
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(2)">
+                                <span>Quel est le ticket minimum d'investissement ?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer" id="faq-answer-2">
+                                <p>Le ticket minimum d'investissement varie selon le type d'investissement :</p>
+                                <ul style="margin-top: 10px; padding-left: 20px;">
+                                    <li><strong>Série A :</strong> 10 millions FCFA minimum</li>
+                                    <li><strong>Notes Convertibles :</strong> 5 millions FCFA minimum</li>
+                                    <li><strong>Club Deal Stratégique :</strong> 100 millions FCFA minimum</li>
+                                    <li><strong>ESOP :</strong> Réservé aux employés et partenaires clés</li>
+                                </ul>
+                                <p style="margin-top: 10px;">Pour les investisseurs individuels, nous recommandons un ticket minimum de 10M FCFA pour assurer une bonne diversification.</p>
+                            </div>
+                        </div>
+
+                        <!-- Question 3 -->
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(3)">
+                                <span>Quel est le calendrier de sortie prévu ?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer" id="faq-answer-3">
+                                <p>Nous prévoyons plusieurs options de sortie pour nos investisseurs :</p>
+                                <ul style="margin-top: 10px; padding-left: 20px;">
+                                    <li><strong>3-5 ans :</strong> Acquisition stratégique par un grand groupe (MTN, Orange, Uber, etc.)</li>
+                                    <li><strong>5-7 ans :</strong> Introduction en bourse sur la Bourse des Valeurs Mobilières de l'Afrique Centrale (BVMAC)</li>
+                                    <li><strong>Secondary sale :</strong> Vente des actions à de nouveaux investisseurs lors de levées ultérieures</li>
+                                </ul>
+                                <p style="margin-top: 10px;">Notre objectif est de générer un retour sur investissement de 3x à 5x pour les investisseurs de la Série A.</p>
+                            </div>
+                        </div>
+
+                        <!-- Question 4 -->
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(4)">
+                                <span>Comment fonctionne la gouvernance ?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer" id="faq-answer-4">
+                                <p>Notre structure de gouvernance est conçue pour protéger les intérêts de tous les actionnaires :</p>
+                                <ul style="margin-top: 10px; padding-left: 20px;">
+                                    <li><strong>Conseil d'Administration :</strong> 5 membres (2 fondateurs, 2 investisseurs, 1 indépendant)</li>
+                                    <li><strong>Réunions du CA :</strong> Trimestrielles avec rapports détaillés</li>
+                                    <li><strong>Droits des investisseurs :</strong> Droit de veto sur les décisions clés, droit de préemption, tag-along/drag-along</li>
+                                    <li><strong>Reporting :</strong> Rapports mensuels opérationnels et trimestriels financiers</li>
+                                    <li><strong>Transparence :</strong> Accès complet aux données et équipe de direction</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Question 5 -->
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(5)">
+                                <span>Quels sont les risques principaux ?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer" id="faq-answer-5">
+                                <p>Comme toute startup, J-Go fait face à certains risques que nous gérons activement :</p>
+                                <ul style="margin-top: 10px; padding-left: 20px;">
+                                    <li><strong>Risque marché :</strong> Concurrence accrue - Atténué par notre technologie brevetée et nos partenariats exclusifs</li>
+                                    <li><strong>Risque réglementaire :</strong> Évolution des régulations fintech - Suivi constant via notre comité de conformité</li>
+                                    <li><strong>Risque opérationnel :</strong> Dépendance à la technologie - Backups multiples et équipe technique expérimentée</li>
+                                    <li><strong>Risque financier :</strong> Burn rate - 18 mois de runway après la levée de fonds</li>
+                                    <li><strong>Risque équipe :</strong> Rétention des talents - Programme ESOP attractif et culture d'entreprise forte</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Question 6 -->
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(6)">
+                                <span>Comment seront utilisés les fonds levés ?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer" id="faq-answer-6">
+                                <p>Les 500M FCFA de la Série A seront alloués comme suit :</p>
+                                <ul style="margin-top: 10px; padding-left: 20px;">
+                                    <li><strong>40% - Expansion commerciale :</strong> Recrutement d'équipes commerciales, marketing, ouverture dans 5 nouvelles villes</li>
+                                    <li><strong>30% - Développement produit :</strong> Nouvelles fonctionnalités, amélioration de l'expérience utilisateur, R&D</li>
+                                    <li><strong>20% - Opérations :</strong> Infrastructure technique, support client, équipes opérationnelles</li>
+                                    <li><strong>10% - Fonds de roulement :</strong> Trésorerie pour couvrir les dépenses courantes et imprévus</li>
+                                </ul>
+                                <p style="margin-top: 10px;">Cette allocation nous donnera 18 mois de runway pour atteindre la profitabilité.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page Événements -->
+            <div id="evenements-page" class="page">
+                <div class="documents-section">
+                    <h1 style="margin-bottom: 20px;">Événements Investisseurs</h1>
+                    <p style="color: #718096; margin-bottom: 40px; max-width: 800px;">
+                        Participez à nos événements pour rencontrer l'équipe, poser vos questions et rencontrer d'autres investisseurs.
+                    </p>
+                    
+                    <div class="events-grid">
+                        <!-- Événement 1 -->
+                        <div class="event-card">
+                            <div class="event-date">
+                                <div class="event-day">15</div>
+                                <div class="event-month">NOV 2024</div>
+                            </div>
+                            <div class="event-content">
+                                <h3>Roadshow Investisseurs - Douala</h3>
+                                <p style="margin: 15px 0; color: #718096;">
+                                    <i class="fas fa-map-marker-alt"></i> Hôtel Hilton, Douala
+                                </p>
+                                <p>Présentation exclusive de notre levée de fonds Série A aux investisseurs qualifiés de la région.</p>
+                                
+                                <div style="margin: 20px 0;">
+                                    <strong>Au programme :</strong>
+                                    <ul style="margin-top: 10px; padding-left: 20px;">
+                                        <li>Présentation de l'équipe dirigeante</li>
+                                        <li>Démonstration live de la plateforme</li>
+                                        <li>Session Q&A avec les fondateurs</li>
+                                        <li>Cocktail networking</li>
+                                    </ul>
+                                </div>
+                                
+                                <button class="event-register" onclick="registerEvent('roadshow-douala')">
+                                    <i class="fas fa-calendar-check"></i> S'inscrire à l'événement
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Événement 2 -->
+                        <div class="event-card">
+                            <div class="event-date">
+                                <div class="event-day">22</div>
+                                <div class="event-month">NOV 2024</div>
+                            </div>
+                            <div class="event-content">
+                                <h3>Webinaire International</h3>
+                                <p style="margin: 15px 0; color: #718096;">
+                                    <i class="fas fa-video"></i> En ligne - Zoom
+                                </p>
+                                <p>Webinaire dédié aux investisseurs internationaux intéressés par l'écosystème tech africain.</p>
+                                
+                                <div style="margin: 20px 0;">
+                                    <strong>Au programme :</strong>
+                                    <ul style="margin-top: 10px; padding-left: 20px;">
+                                        <li>Marché tech camerounais : opportunités</li>
+                                        <li>Détails de l'investissement Série A</li>
+                                        <li>Témoignages clients et partenaires</li>
+                                        <li>Session Q&A en direct</li>
+                                    </ul>
+                                </div>
+                                
+                                <button class="event-register" onclick="registerEvent('webinaire-international')">
+                                    <i class="fas fa-video"></i> S'inscrire au webinaire
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Événement 3 -->
+                        <div class="event-card">
+                            <div class="event-date">
+                                <div class="event-day">05</div>
+                                <div class="event-month">DEC 2024</div>
+                            </div>
+                            <div class="event-content">
+                                <h3>Demo Day - Yaoundé</h3>
+                                <p style="margin: 15px 0; color: #718096;">
+                                    <i class="fas fa-map-marker-alt"></i> Ministère des PME, Yaoundé
+                                </p>
+                                <p>Événement en partenariat avec le gouvernement pour présenter notre impact social et économique.</p>
+                                
+                                <div style="margin: 20px 0;">
+                                    <strong>Au programme :</strong>
+                                    <ul style="margin-top: 10px; padding-left: 20px;">
+                                        <li>Présentation des ministres partenaires</li>
+                                        <li>Impact social mesuré</li>
+                                        <li>Témoignages chauffeurs et commerçants</li>
+                                        <li>Signature de conventions</li>
+                                    </ul>
+                                </div>
+                                
+                                <button class="event-register" onclick="registerEvent('demo-day-yaounde')">
+                                    <i class="fas fa-handshake"></i> Demander une invitation
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Événement 4 -->
+                        <div class="event-card">
+                            <div class="event-date">
+                                <div class="event-day">12</div>
+                                <div class="event-month">DEC 2024</div>
+                            </div>
+                            <div class="event-content">
+                                <h3>Investor Day Privé</h3>
+                                <p style="margin: 15px 0; color: #718096;">
+                                    <i class="fas fa-map-marker-alt"></i> Siège J-Go, Akwa Douala
+                                </p>
+                                <p>Journée exclusive pour les investisseurs déjà engagés dans le tour de table.</p>
+                                
+                                <div style="margin: 20px 0;">
+                                    <strong>Au programme :</strong>
+                                    <ul style="margin-top: 10px; padding-left: 20px;">
+                                        <li>Review stratégique détaillé</li>
+                                        <li>Rencontre avec les équipes opérationnelles</li>
+                                        <li>Présentation des roadmap produit</li>
+                                        <li>Session de brainstorming stratégique</li>
+                                    </ul>
+                                </div>
+                                
+                                <button class="event-register" onclick="registerEvent('investor-day-prive')">
+                                    <i class="fas fa-user-tie"></i> Réservé aux investisseurs
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page Espace Investisseurs -->
+            <div id="espace-page" class="page">
+                <div class="documents-section">
+                    <h1 style="margin-bottom: 20px;">Espace Investisseurs</h1>
+                    <p style="color: #718096; margin-bottom: 40px; max-width: 800px;">
+                        Bienvenue dans votre espace personnel. Accédez à vos documents, suivre vos investissements et communiquer avec notre équipe.
+                    </p>
+                    
+                    <div class="investor-dashboard">
+                        <!-- Sidebar -->
+                        <div class="dashboard-sidebar">
+                            <div style="text-align: center; margin-bottom: 30px;">
+                                <div style="width: 80px; height: 80px; background: var(--investor-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; color: white; font-size: 32px;">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <h4>Investisseur VIP</h4>
+                                <p style="color: #718096; font-size: 0.9rem;">Niveau: Gold</p>
+                            </div>
+                            
+                            <ul class="dashboard-menu">
+                                <li><a href="#" class="active"><i class="fas fa-chart-line"></i> Tableau de bord</a></li>
+                                <li><a href="#"><i class="fas fa-file-contract"></i> Mes investissements</a></li>
+                                <li><a href="#"><i class="fas fa-file-invoice-dollar"></i> Documents légaux</a></li>
+                                <li><a href="#"><i class="fas fa-chart-bar"></i> Rapports financiers</a></li>
+                                <li><a href="#"><i class="fas fa-calendar"></i> Calendrier d'événements</a></li>
+                                <li><a href="#"><i class="fas fa-envelope"></i> Messagerie</a></li>
+                                <li><a href="#"><i class="fas fa-cog"></i> Paramètres</a></li>
+                            </ul>
+                            
+                            <button style="width: 100%; margin-top: 30px; padding: 12px; background: var(--primary-color); color: white; border: none; border-radius: 8px; cursor: pointer;">
+                                <i class="fas fa-download"></i> Exporter tous les documents
+                            </button>
+                        </div>
+                        
+                        <!-- Content -->
+                        <div class="dashboard-content">
+                            <h3 style="margin-bottom: 30px;">Tableau de Bord</h3>
+                            
+                            <div class="dashboard-stats">
+                                <div class="stat-card">
+                                    <div style="font-size: 2rem; font-weight: bold; color: var(--investor-color);">50M FCFA</div>
+                                    <div>Montant investi</div>
+                                </div>
+                                <div class="stat-card">
+                                    <div style="font-size: 2rem; font-weight: bold; color: var(--accent-color);">15.2%</div>
+                                    <div>ROI actuel</div>
+                                </div>
+                                <div class="stat-card">
+                                    <div style="font-size: 2rem; font-weight: bold; color: var(--primary-color);">3/5</div>
+                                    <div>Documents signés</div>
+                                </div>
+                                <div class="stat-card">
+                                    <div style="font-size: 2rem; font-weight: bold; color: var(--secondary-color);">2</div>
+                                    <div>Événements à venir</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Section Documents Récents -->
+                            <div style="margin-top: 40px;">
+                                <h4 style="margin-bottom: 20px;">Documents Récents</h4>
+                                <div style="background: var(--light-color); border-radius: 12px; padding: 20px;">
+                                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px; border-bottom: 1px solid #E2E8F0;">
+                                        <div>
+                                            <strong>Rapport Mensuel - Octobre 2024</strong>
+                                            <div style="color: #718096; font-size: 0.9rem;">Ajouté le 05/11/2024</div>
+                                        </div>
+                                        <button style="padding: 8px 16px; background: var(--investor-color); color: white; border: none; border-radius: 6px; cursor: pointer;">
+                                            <i class="fas fa-download"></i> Télécharger
+                                        </button>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px; border-bottom: 1px solid #E2E8F0;">
+                                        <div>
+                                            <strong>PV Conseil d'Administration</strong>
+                                            <div style="color: #718096; font-size: 0.9rem;">Ajouté le 28/10/2024</div>
+                                        </div>
+                                        <button style="padding: 8px 16px; background: var(--investor-color); color: white; border: none; border-radius: 6px; cursor: pointer;">
+                                            <i class="fas fa-download"></i> Télécharger
+                                        </button>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px;">
+                                        <div>
+                                            <strong>Projections Révisées Q4 2024</strong>
+                                            <div style="color: #718096; font-size: 0.9rem;">Ajouté le 20/10/2024</div>
+                                        </div>
+                                        <button style="padding: 8px 16px; background: var(--investor-color); color: white; border: none; border-radius: 6px; cursor: pointer;">
+                                            <i class="fas fa-download"></i> Télécharger
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Section Prochaines Échéances -->
+                            <div style="margin-top: 40px;">
+                                <h4 style="margin-bottom: 20px;">Prochaines Échéances</h4>
+                                <div style="background: var(--light-color); border-radius: 12px; padding: 20px;">
+                                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px; border-bottom: 1px solid #E2E8F0;">
+                                        <div>
+                                            <strong>Signature documents Série A</strong>
+                                            <div style="color: #718096; font-size: 0.9rem;">Échéance: 30/11/2024</div>
+                                        </div>
+                                        <span style="padding: 6px 12px; background: var(--accent-color); color: white; border-radius: 20px; font-size: 0.9rem;">
+                                            En attente
+                                        </span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px;">
+                                        <div>
+                                            <strong>Décaissement tranche 1</strong>
+                                            <div style="color: #718096; font-size: 0.9rem;">Échéance: 15/12/2024</div>
+                                        </div>
+                                        <span style="padding: 6px 12px; background: var(--secondary-color); color: var(--dark-color); border-radius: 20px; font-size: 0.9rem;">
+                                            À venir
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Section Téléchargement -->
     <section class="cta-section" id="telecharger">
         <div class="container">
@@ -1631,7 +2766,7 @@
             <p class="fade-in delay-1">Téléchargez notre dossier complet pour prendre une décision éclairée</p>
             
             <div class="app-stores fade-in delay-2">
-                <a href="#" class="store-btn" id="downloadBusinessPlan">
+                <a href="#documents" class="store-btn" id="downloadBusinessPlan">
                     <i class="fas fa-file-pdf fa-2x"></i>
                     <div>
                         <div style="font-size: 0.8rem;">Document principal</div>
@@ -1639,7 +2774,7 @@
                     </div>
                 </a>
                 
-                <a href="#" class="store-btn" id="downloadPitchDeck">
+                <a href="#documents" class="store-btn" id="downloadPitchDeck">
                     <i class="fas fa-chart-bar fa-2x"></i>
                     <div>
                         <div style="font-size: 0.8rem;">Présentation</div>
@@ -1647,7 +2782,7 @@
                     </div>
                 </a>
                 
-                <a href="#" class="store-btn" id="downloadFinancials">
+                <a href="#documents" class="store-btn" id="downloadFinancials">
                     <i class="fas fa-calculator fa-2x"></i>
                     <div>
                         <div style="font-size: 0.8rem;">Projections</div>
@@ -1684,22 +2819,22 @@
                 <div class="footer-links">
                     <h4>Documents Légaux</h4>
                     <ul>
-                        <li><a href="#">Memorandum d'Investissement</a></li>
-                        <li><a href="#">Statuts de la Société</a></li>
-                        <li><a href="#">Due Diligence Package</a></li>
-                        <li><a href="#">Term Sheet</a></li>
-                        <li><a href="#">Contrat d'Investissement</a></li>
+                        <li><a href="#documents">Memorandum d'Investissement</a></li>
+                        <li><a href="#documents">Statuts de la Société</a></li>
+                        <li><a href="#documents">Due Diligence Package</a></li>
+                        <li><a href="#documents">Term Sheet</a></li>
+                        <li><a href="#documents">Contrat d'Investissement</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-links">
                     <h4>Pour les Investisseurs</h4>
                     <ul>
-                        <li><a href="#investisseurs">Opportunités</a></li>
-                        <li><a href="#levée-de-fonds">Processus d'Investissement</a></li>
-                        <li><a href="#">FAQ Investisseurs</a></li>
-                        <li><a href="#">Événements Investisseurs</a></li>
-                        <li><a href="#">Espace Investisseurs</a></li>
+                        <li><a href="#opportunites">Opportunités</a></li>
+                        <li><a href="#processus">Processus d'Investissement</a></li>
+                        <li><a href="#faq">FAQ Investisseurs</a></li>
+                        <li><a href="#evenements">Événements Investisseurs</a></li>
+                        <li><a href="#espace">Espace Investisseurs</a></li>
                     </ul>
                 </div>
                 
@@ -1717,7 +2852,7 @@
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Akwa, Douala - Cameroun</span>
+                            <span>Siège Social: Akwa, Douala - CMR</span>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
@@ -1742,6 +2877,196 @@
     <button class="back-to-top" id="backToTop">
         <i class="fas fa-arrow-up"></i>
     </button>
+
+    <!-- Contenu pour impression -->
+    <div class="print-content" id="business-plan">
+        <div class="no-print" style="text-align: center; margin-bottom: 30px;">
+            <button onclick="window.print()" style="padding: 10px 20px; background: var(--investor-color); color: white; border: none; border-radius: 5px; cursor: pointer;">
+                <i class="fas fa-print"></i> Imprimer ce document
+            </button>
+        </div>
+        
+        <h1>Business Plan J-Go - Version Complète</h1>
+        
+        <section>
+            <h2>1. Résumé Exécutif</h2>
+            <p><strong>Société :</strong> J-Go SAS</p>
+            <p><strong>Secteur :</strong> Technologie/Mobile/Services</p>
+            <p><strong>Localisation :</strong> Douala, Cameroun</p>
+            <p><strong>Année de création :</strong> 2022</p>
+            
+            <h3>Notre Vision</h3>
+            <p>Devenir la super-app leader en Afrique Centrale en révolutionnant l'accès aux services essentiels via une plateforme numérique intégrée.</p>
+            
+            <h3>Notre Mission</h3>
+            <p>Faciliter le quotidien des camerounais en offrant un écosystème complet de services (transport, paiement, commerce) accessible même sans connexion internet.</p>
+            
+            <h3>Chiffres Clés (Novembre 2024)</h3>
+            <ul>
+                <li>125,000 utilisateurs actifs mensuels</li>
+                <li>15M FCFA de revenus mensuels</li>
+                <li>15% de croissance mensuelle</li>
+                <li>8,500 chauffeurs partenaires</li>
+                <li>12 villes couvertes</li>
+            </ul>
+        </section>
+        
+        <div class="page-break"></div>
+        
+        <section>
+            <h2>2. Analyse du Marché</h2>
+            
+            <h3>2.1 Taille du Marché</h3>
+            <p><strong>Marché Total Adressable (TAM) :</strong> 2.5 millions d'utilisateurs potentiels au Cameroun</p>
+            <p><strong>Marché Serviceable Adressable (SAM) :</strong> 1.2 millions dans les 10 principales villes</p>
+            <p><strong>Marché Serviceable Obtainable (SOM) :</strong> 600,000 utilisateurs dans les 3 prochaines années</p>
+            
+            <h3>2.2 Croissance du Marché</h3>
+            <ul>
+                <li>Marché du transport numérique : Croissance de 35% par an</li>
+                <li>Marché du paiement mobile : Croissance de 40% par an</li>
+                <li>Taux de pénétration smartphone : 45% et en croissance rapide</li>
+            </ul>
+        </section>
+        
+        <div class="page-break"></div>
+        
+        <section>
+            <h2>3. Produit et Technologie</h2>
+            
+            <h3>3.1 Notre Écosystème</h3>
+            <ul>
+                <li><strong>J-Transport :</strong> Plateforme de transport multimodal</li>
+                <li><strong>J-Pa :</strong> Portefeuille numérique sécurisé</li>
+                <li><strong>J-Market :</strong> Marketplace pour commerçants locaux</li>
+                <li><strong>J-Ticket :</strong> Réservation de billets et événements</li>
+                <li><strong>J-Utilities :</strong> Paiement de factures en ligne</li>
+            </ul>
+        </section>
+    </div>
+
+    <div class="print-content" id="pitch-deck">
+        <div class="no-print" style="text-align: center; margin-bottom: 30px;">
+            <button onclick="window.print()" style="padding: 10px 20px; background: var(--investor-color); color: white; border: none; border-radius: 5px; cursor: pointer;">
+                <i class="fas fa-print"></i> Imprimer ce document
+            </button>
+        </div>
+        
+        <h1>Pitch Deck J-Go - Série A</h1>
+        
+        <section>
+            <h2>Slide 1: Titre</h2>
+            <div style="text-align: center; padding: 40px; border: 2px solid var(--investor-color); border-radius: 10px;">
+                <h1 style="color: var(--investor-color);">J-Go</h1>
+                <p style="font-size: 1.5rem;">La Super-App Camerounaise</p>
+                <p><strong>Levée de fonds Série A - 500M FCFA</strong></p>
+                <p>Novembre 2024</p>
+            </div>
+        </section>
+        
+        <div class="page-break"></div>
+        
+        <section>
+            <h2>Slide 2: Problème</h2>
+            <h3>Les défis du quotidien au Cameroun</h3>
+            <ul>
+                <li><strong>Transport :</strong> Manque de fiabilité, sécurité limitée, paiement compliqué</li>
+                <li><strong>Paiements :</strong> Dépendance au cash, frais élevés, accès limité au bancaire</li>
+                <li><strong>Services essentiels :</strong> Files d'attente interminables, manque de digitalisation</li>
+                <li><strong>Connectivité :</strong> 60% de la population avec accès internet limité</li>
+            </ul>
+            <p><strong>Opportunité :</strong> 25M de personnes cherchent des solutions intégrées</p>
+        </section>
+        
+        <div class="page-break"></div>
+        
+        <section>
+            <h2>Slide 3: Solution</h2>
+            <h3>Une seule app pour tout faire</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div style="border: 1px solid #ddd; padding: 15px; border-radius: 8px;">
+                    <h4>J-Transport</h4>
+                    <p>Taxi, moto, bus en 2 clics</p>
+                </div>
+                <div style="border: 1px solid #ddd; padding: 15px; border-radius: 8px;">
+                    <h4>J-Pa</h4>
+                    <p>Paiement mobile sécurisé</p>
+                </div>
+                <div style="border: 1px solid #ddd; padding: 15px; border-radius: 8px;">
+                    <h4>J-Market</h4>
+                    <p>Commerce local en ligne</p>
+                </div>
+                <div style="border: 1px solid #ddd; padding: 15px; border-radius: 8px;">
+                    <h4>Sans Internet</h4>
+                    <p>Via SMS/USSD</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="print-content" id="modele-financier">
+        <div class="no-print" style="text-align: center; margin-bottom: 30px;">
+            <button onclick="window.print()" style="padding: 10px 20px; background: var(--investor-color); color: white; border: none; border-radius: 5px; cursor: pointer;">
+                <i class="fas fa-print"></i> Imprimer ce document
+            </button>
+        </div>
+        
+        <h1>Modèle Financier J-Go - Projections 2024-2028</h1>
+        
+        <section>
+            <h2>1. Hypothèses Clés</h2>
+            <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                <thead>
+                    <tr style="background: var(--light-color);">
+                        <th style="border: 1px solid #ddd; padding: 10px;">Paramètre</th>
+                        <th style="border: 1px solid #ddd; padding: 10px;">2024</th>
+                        <th style="border: 1px solid #ddd; padding: 10px;">2025</th>
+                        <th style="border: 1px solid #ddd; padding: 10px;">2026</th>
+                        <th style="border: 1px solid #ddd; padding: 10px;">2027</th>
+                        <th style="border: 1px solid #ddd; padding: 10px;">2028</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 10px;">Utilisateurs Actifs</td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">125,000</td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">350,000</td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">750,000</td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">1,200,000</td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">1,800,000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <div class="page-break"></div>
+        
+        <section>
+            <h2>2. Projections de Revenus (en millions FCFA)</h2>
+            <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                <thead>
+                    <tr style="background: var(--light-color);">
+                        <th style="border: 1px solid #ddd; padding: 10px;">Source de revenus</th>
+                        <th style="border: 1px solid #ddd; padding: 10px;">2024</th>
+                        <th style="border: 1px solid #ddd; padding: 10px;">2025</th>
+                        <th style="border: 1px solid #ddd; padding: 10px;">2026</th>
+                        <th style="border: 1px solid #ddd; padding: 10px;">2027</th>
+                        <th style="border: 1px solid #ddd; padding: 10px;">2028</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 10px;">Commission Transport</td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">96</td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">315</td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">810</td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">1,440</td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">2,376</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
 
     <script>
         // Données pour le slider d'images
@@ -1824,7 +3149,7 @@
             }
         ];
 
-        // Variables globales pour le slider
+        // Variables globales
         let currentSlide = 0;
         let slideInterval;
 
@@ -1835,28 +3160,28 @@
                 document.getElementById('loadingScreen').classList.add('hidden');
             }, 1500);
 
-            // Initialiser les composants
+            // Initialiser tous les composants
             initNavigation();
             initHeroSlider();
             initStatsCounters();
             initPartnersCarousel();
             initServices();
             initInvestorForm();
+            initPageSystem();
+            initFAQ();
             initScrollAnimations();
             initBackToTop();
-
-            // Navigation fluide pour les ancres
-            initSmoothScroll();
 
             // Simulation de la barre de progression
             simulateProgressBar();
         });
 
-        // Navigation mobile
+        // Navigation principale
         function initNavigation() {
             const mobileMenuBtn = document.getElementById('mobileMenuBtn');
             const navMenu = document.getElementById('navMenu');
             const header = document.getElementById('mainHeader');
+            const navLinks = document.querySelectorAll('.nav-link');
 
             mobileMenuBtn.addEventListener('click', () => {
                 navMenu.classList.toggle('active');
@@ -1865,9 +3190,32 @@
                     : '<i class="fas fa-bars"></i>';
             });
 
-            // Fermer le menu en cliquant sur un lien
-            document.querySelectorAll('.nav-menu a').forEach(link => {
-                link.addEventListener('click', () => {
+            // Gestion du clic sur les liens de navigation
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href').substring(1);
+                    
+                    if (targetId === 'accueil') {
+                        // Retour à l'accueil
+                        document.getElementById('pagesContainer').style.display = 'none';
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    } else if (['documents', 'opportunites', 'processus', 'faq', 'evenements', 'espace'].includes(targetId)) {
+                        // Afficher la page correspondante
+                        showPage(targetId);
+                    } else {
+                        // Navigation normale vers une section
+                        const targetElement = document.getElementById(targetId);
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+
+                    // Fermer le menu mobile
                     navMenu.classList.remove('active');
                     mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
                 });
@@ -1881,6 +3229,28 @@
                     header.classList.remove('scrolled');
                 }
             });
+        }
+
+        // Système de pages
+        function initPageSystem() {
+            // Cacher initialement le conteneur de pages
+            document.getElementById('pagesContainer').style.display = 'none';
+        }
+
+        function showPage(pageId) {
+            // Afficher le conteneur de pages
+            document.getElementById('pagesContainer').style.display = 'block';
+            
+            // Cacher toutes les pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Afficher la page demandée
+            document.getElementById(`${pageId}-page`).classList.add('active');
+            
+            // Scroll vers le haut
+            window.scrollTo({ top: document.getElementById('pagesContainer').offsetTop - 80, behavior: 'smooth' });
         }
 
         // Slider Hero avec images de fond
@@ -1914,12 +3284,9 @@
                 goToSlide(currentSlide + 1);
             });
 
-            // Fonction pour changer de slide
             function goToSlide(index) {
-                // Réinitialiser l'intervalle
                 resetInterval();
                 
-                // Calculer le nouvel index
                 if (index < 0) {
                     currentSlide = heroImages.length - 1;
                 } else if (index >= heroImages.length) {
@@ -1928,20 +3295,14 @@
                     currentSlide = index;
                 }
 
-                // Mettre à jour l'affichage
                 updateSlide();
-                
-                // Redémarrer l'intervalle
                 startInterval();
             }
 
-            // Fonction pour mettre à jour le slide actif
             function updateSlide() {
-                // Mettre à jour les images de fond
                 heroBgElements.forEach((bg, index) => {
                     if (index === currentSlide) {
                         bg.classList.add('active');
-                        // Mettre à jour la légende
                         imageCaption.textContent = heroImages[index].caption;
                         imageCaption.classList.add('active');
                     } else {
@@ -1949,7 +3310,6 @@
                     }
                 });
 
-                // Mettre à jour les points indicateurs
                 document.querySelectorAll('.slider-dot').forEach((dot, index) => {
                     if (index === currentSlide) {
                         dot.classList.add('active');
@@ -1959,31 +3319,26 @@
                 });
             }
 
-            // Fonction pour démarrer l'intervalle automatique
             function startInterval() {
                 slideInterval = setInterval(() => {
                     goToSlide(currentSlide + 1);
                 }, 5000);
             }
 
-            // Fonction pour réinitialiser l'intervalle
             function resetInterval() {
                 clearInterval(slideInterval);
             }
 
-            // Démarrer le slider automatique
             startInterval();
 
-            // Pause au survol
             const heroSection = document.querySelector('.hero');
             heroSection.addEventListener('mouseenter', resetInterval);
             heroSection.addEventListener('mouseleave', startInterval);
 
-            // Mettre à jour initialement
             updateSlide();
         }
 
-        // Compteurs animés pour les statistiques
+        // Compteurs animés
         function initStatsCounters() {
             const counters = [
                 { id: 'userCount', target: 125000, duration: 2000 },
@@ -2023,7 +3378,6 @@
                     }
                 };
 
-                // Démarrer l'animation quand l'élément est visible
                 const observer = new IntersectionObserver((entries) => {
                     if (entries[0].isIntersecting) {
                         updateCounter();
@@ -2041,12 +3395,9 @@
             const prevBtn = document.getElementById('prevPartner');
             const nextBtn = document.getElementById('nextPartner');
 
-            // Générer les logos des partenaires
             partners.forEach((partner, index) => {
                 const logoDiv = document.createElement('div');
                 logoDiv.className = 'partner-logo';
-                
-                // Ajouter une classe spécifique pour le type
                 logoDiv.classList.add(partner.type);
                 
                 logoDiv.innerHTML = `
@@ -2079,7 +3430,7 @@
 
         // Services (Modèle d'affaires)
         function initServices() {
-            const servicesGrid = document.querySelector('.services-grid');
+            const servicesGrid = document.getElementById('servicesGrid');
             
             services.forEach(service => {
                 const serviceCard = document.createElement('div');
@@ -2102,7 +3453,6 @@
             investorForm.addEventListener('submit', function(e) {
                 e.preventDefault();
                 
-                // Récupérer les données du formulaire
                 const formData = {
                     name: document.getElementById('investorName').value,
                     email: document.getElementById('investorEmail').value,
@@ -2113,30 +3463,25 @@
                     message: document.getElementById('investorMessage').value
                 };
                 
-                // Simulation d'envoi
                 showNotification(`Merci ${formData.name} ! Nous vous contacterons très rapidement pour discuter de votre investissement.`);
-                
-                // Réinitialiser le formulaire
                 investorForm.reset();
-                
-                // Scroll vers le haut
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
 
             // Gestion des téléchargements de documents
             document.getElementById('downloadBusinessPlan').addEventListener('click', function(e) {
                 e.preventDefault();
-                showNotification('Téléchargement du Business Plan démarré... (document simulé)');
+                showPage('documents');
             });
 
             document.getElementById('downloadPitchDeck').addEventListener('click', function(e) {
                 e.preventDefault();
-                showNotification('Téléchargement du Pitch Deck démarré... (document simulé)');
+                showPage('documents');
             });
 
             document.getElementById('downloadFinancials').addEventListener('click', function(e) {
                 e.preventDefault();
-                showNotification('Téléchargement du Modèle Financier démarré... (document simulé)');
+                showPage('documents');
             });
         }
 
@@ -2145,11 +3490,28 @@
             const progressFill = document.getElementById('progressFill');
             const progressAmount = document.getElementById('progressAmount');
             
-            // Animation de la barre de progression
             setTimeout(() => {
                 progressFill.style.width = '65%';
                 progressAmount.textContent = '325M FCFA';
             }, 1000);
+        }
+
+        // FAQ
+        function initFAQ() {
+            toggleFAQ(1);
+        }
+
+        function toggleFAQ(id) {
+            const answer = document.getElementById(`faq-answer-${id}`);
+            const isActive = answer.classList.contains('active');
+            
+            document.querySelectorAll('.faq-answer').forEach(faq => {
+                faq.classList.remove('active');
+            });
+            
+            if (!isActive) {
+                answer.classList.add('active');
+            }
         }
 
         // Animations au défilement
@@ -2186,28 +3548,62 @@
             });
         }
 
-        // Navigation fluide pour les ancres
-        function initSmoothScroll() {
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
+        // Fonctions utilitaires
+        function printDocument(type) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.style.display = 'none';
             });
+            
+            const printContent = document.getElementById(type);
+            printContent.style.display = 'block';
+            
+            window.print();
+            
+            printContent.style.display = 'none';
+            document.querySelector('.page.active').style.display = 'block';
         }
 
-        // Fonction pour afficher des notifications
+        function showInterest(type) {
+            let message = '';
+            switch(type) {
+                case 'serie-a':
+                    message = 'Merci pour votre intérêt pour la Série A. Notre équipe vous contactera dans les 24h.';
+                    break;
+                case 'notes-convertibles':
+                    message = 'Merci pour votre intérêt pour les notes convertibles. Le term sheet vous sera envoyé par email.';
+                    break;
+                case 'club-deal':
+                    message = 'Merci pour votre intérêt pour le Club Deal. Notre directeur des investissements prendra contact directement.';
+                    break;
+                case 'esop':
+                    message = 'Merci pour votre intérêt pour le programme ESOP. Notre RH vous enverra les détails.';
+                    break;
+            }
+            
+            alert(message);
+        }
+
+        function registerEvent(eventName) {
+            let message = '';
+            switch(eventName) {
+                case 'roadshow-douala':
+                    message = 'Inscription confirmée pour le Roadshow Douala du 15 Novembre. Un email de confirmation vous a été envoyé.';
+                    break;
+                case 'webinaire-international':
+                    message = 'Inscription confirmée pour le webinaire international. Le lien Zoom vous sera envoyé 24h avant l\'événement.';
+                    break;
+                case 'demo-day-yaounde':
+                    message = 'Demande d\'invitation envoyée pour le Demo Day Yaoundé. Notre équipe vous contactera pour validation.';
+                    break;
+                case 'investor-day-prive':
+                    message = 'Cet événement est réservé aux investisseurs actifs. Si vous êtes investisseur, contactez votre relationship manager.';
+                    break;
+            }
+            
+            alert(message);
+        }
+
         function showNotification(message) {
-            // Créer l'élément de notification
             const notification = document.createElement('div');
             notification.style.cssText = `
                 position: fixed;
@@ -2235,7 +3631,6 @@
             
             document.body.appendChild(notification);
             
-            // Supprimer la notification après 5 secondes
             setTimeout(() => {
                 notification.style.animation = 'slideOut 0.3s ease';
                 setTimeout(() => {
@@ -2288,20 +3683,18 @@
             const currentValue = parseInt(currentText);
             
             if (!isNaN(currentValue) && currentValue < 500000000) {
-                // Simuler une augmentation aléatoire
-                const increase = Math.floor(Math.random() * 5000000); // Jusqu'à 5M FCFA
+                const increase = Math.floor(Math.random() * 5000000);
                 const newValue = currentValue + increase;
                 
                 if (newValue <= 500000000) {
                     progressAmount.textContent = newValue.toLocaleString('fr-FR') + ' FCFA';
                     
-                    // Mettre à jour la barre de progression
                     const progressFill = document.getElementById('progressFill');
                     const percentage = (newValue / 500000000) * 100;
                     progressFill.style.width = `${Math.min(percentage, 100)}%`;
                 }
             }
-        }, 10000); // Toutes les 10 secondes
+        }, 10000);
     </script>
 </body>
 </html>
