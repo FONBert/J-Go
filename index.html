@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>J-Go | Votre Écosystème</title>
-    <meta name="description" content="J-Go : L'écosystème numérique camerounais qui réunit transport, paiement et services essentiels dans une seule application. Fonctionne même sans internet.">
-    <meta name="keywords" content="Cameroun, transport, paiement numérique, mobile money, taxi, application, SMS, USSD">
+    <title>J-Go | Écosystème Numérique Camerounais - Investisseurs</title>
+    <meta name="description" content="J-Go : Plateforme numérique innovante au Cameroun. Recherche d'investisseurs pour financer notre expansion et révolutionner les services de transport et paiement.">
+    <meta name="keywords" content="investissement Cameroun, startup africaine, levée de fonds, transport numérique, fintech Afrique, mobile money, investisseurs startup">
     <meta name="author" content="J-Go">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -14,6 +14,7 @@
             --primary-color: #1E6FBA;
             --secondary-color: #F4C542;
             --accent-color: #2E8B57;
+            --investor-color: #8A2BE2;
             --dark-color: #1A365D;
             --light-color: #F7FAFC;
             --text-color: #2D3748;
@@ -235,15 +236,8 @@
             display: inline-block;
         }
 
-        .highlight::after {
-            content: '';
-            position: absolute;
-            bottom: 5px;
-            left: 0;
-            width: 100%;
-            height: 8px;
-            background-color: rgba(244, 197, 66, 0.5);
-            z-index: -1;
+        .highlight.investor {
+            color: var(--investor-color);
         }
 
         .hero-text p {
@@ -293,6 +287,17 @@
         .btn-secondary:hover {
             background-color: rgba(30, 111, 186, 0.1);
             transform: translateY(-2px);
+        }
+
+        .btn-investor {
+            background-color: var(--investor-color);
+            color: white;
+        }
+
+        .btn-investor:hover {
+            background-color: #7a1fd1;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(138, 43, 226, 0.2);
         }
 
         .hero-visual {
@@ -454,7 +459,135 @@
             font-weight: 500;
         }
 
-        /* Partners Section */
+        /* Investisseurs Section */
+        .investors-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.05), rgba(30, 111, 186, 0.05));
+        }
+
+        .investors-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .investment-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            border: 2px solid var(--investor-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .investment-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--investor-color), var(--primary-color));
+        }
+
+        .investment-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--investor-color);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .investment-progress {
+            margin: 30px 0;
+        }
+
+        .progress-bar {
+            height: 12px;
+            background: #E2E8F0;
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--investor-color), var(--primary-color));
+            border-radius: 6px;
+            width: 65%;
+            position: relative;
+            transition: width 1s ease;
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.4), 
+                transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .progress-info {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-color);
+            font-size: 0.9rem;
+        }
+
+        .investment-details {
+            margin-top: 30px;
+        }
+
+        .detail-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #E2E8F0;
+        }
+
+        .investor-benefits {
+            margin-top: 40px;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .benefit-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--investor-color), var(--primary-color));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        /* Partenaires Section */
         .partners {
             padding: 80px 0;
             background: linear-gradient(135deg, rgba(244, 197, 66, 0.05), rgba(46, 139, 87, 0.05));
@@ -508,19 +641,6 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
             border-color: var(--primary-color);
-        }
-
-        .partner-logo img {
-            max-width: 100%;
-            max-height: 60px;
-            filter: grayscale(100%);
-            opacity: 0.7;
-            transition: var(--transition);
-        }
-
-        .partner-logo:hover img {
-            filter: grayscale(0%);
-            opacity: 1;
         }
 
         .partner-name {
@@ -710,6 +830,59 @@
             color: white;
         }
 
+        /* Formulaire Investisseurs */
+        .investor-form-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--investor-color), #7a1fd1);
+            color: white;
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.9);
+            font-size: 16px;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: white;
+            background: white;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
         /* CTA Section */
         .cta-section {
             padding: 80px 0;
@@ -873,76 +1046,10 @@
             font-size: 0.9rem;
         }
 
-        /* Region Selector */
-        .region-selector {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 100;
-        }
-
-        .region-btn {
-            background: white;
-            border: none;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            color: var(--primary-color);
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .region-btn:hover {
-            transform: scale(1.1);
-        }
-
-        .region-menu {
-            position: absolute;
-            bottom: 70px;
-            right: 0;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            padding: 15px;
-            display: none;
-            flex-direction: column;
-            gap: 10px;
-            min-width: 180px;
-        }
-
-        .region-menu.active {
-            display: flex;
-        }
-
-        .region-option {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 10px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .region-option:hover {
-            background: #F7FAFC;
-        }
-
-        .region-color {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-        }
-
         /* Back to Top Button */
         .back-to-top {
             position: fixed;
-            bottom: 90px;
+            bottom: 20px;
             right: 20px;
             width: 50px;
             height: 50px;
@@ -1007,7 +1114,7 @@
 
         /* Responsive Design */
         @media (max-width: 992px) {
-            .hero-content {
+            .hero-content, .investors-content {
                 grid-template-columns: 1fr;
                 text-align: center;
             }
@@ -1019,6 +1126,7 @@
             .phone-mockup {
                 width: 250px;
                 height: 500px;
+                margin-top: 30px;
             }
 
             .partners-track {
@@ -1034,6 +1142,10 @@
                 width: 40px;
                 height: 40px;
                 font-size: 20px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -1097,6 +1209,10 @@
             .slider-nav {
                 display: none;
             }
+
+            .form-container {
+                padding: 30px 20px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1129,6 +1245,10 @@
             .partner-logo {
                 width: 130px;
                 height: 70px;
+            }
+
+            .investment-card {
+                padding: 30px 20px;
             }
         }
 
@@ -1185,7 +1305,7 @@
                 <div class="logo-img">JG</div>
                 <div>
                     <div class="logo-text">J-Go</div>
-                    <div class="logo-slogan">Une seule app pour ta ville</div>
+                    <div class="logo-slogan">Investir dans l'avenir numérique</div>
                 </div>
             </div>
             
@@ -1195,10 +1315,10 @@
             
             <nav class="nav-menu" id="navMenu">
                 <a href="#accueil">Accueil</a>
+                <a href="#investisseurs">Investisseurs</a>
                 <a href="#services">Services</a>
-                <a href="#fonctionnalites">Fonctionnalités</a>
                 <a href="#partenaires">Partenaires</a>
-                <a href="#telecharger">Télécharger</a>
+                <a href="#levée-de-fonds">Levée de Fonds</a>
                 <a href="#contact">Contact</a>
             </nav>
         </div>
@@ -1207,11 +1327,11 @@
     <!-- Hero Section avec slider d'images -->
     <section class="hero" id="accueil">
         <!-- Images de fond -->
-        <div class="hero-bg taxi active" data-caption="Transport fiable et rapide"></div>
-        <div class="hero-bg fourgonette" data-caption="Livraison de marchandises"></div>
-        <div class="hero-bg eleve" data-caption="Éducation et transport scolaire"></div>
-        <div class="hero-bg station" data-caption="Services aux stations"></div>
-        <div class="hero-bg restaurant" data-caption="Livraison de nourriture"></div>
+        <div class="hero-bg taxi active" data-caption="Opportunité d'investissement unique"></div>
+        <div class="hero-bg fourgonette" data-caption="Marché en croissance exponentielle"></div>
+        <div class="hero-bg eleve" data-caption="Impact social significatif"></div>
+        <div class="hero-bg station" data-caption="Retour sur investissement garanti"></div>
+        <div class="hero-bg restaurant" data-caption="Leadership technologique"></div>
         
         <div class="hero-overlay"></div>
         
@@ -1230,19 +1350,19 @@
         </div>
         
         <!-- Légende de l'image -->
-        <div class="image-caption" id="imageCaption">Transport fiable et rapide</div>
+        <div class="image-caption" id="imageCaption">Opportunité d'investissement unique</div>
 
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text fade-in">
-                    <h1>Votre <span class="highlight">écosystème numérik</span> camerounais</h1>
-                    <p>J-Go réunit transport, paiement numérique et services essentiels dans une seule application. Fonctionne même sans internet grâce à notre technologie SMS/USSD.</p>
+                    <h1>Investissez dans le <span class="highlight investor">futur numérique</span> du Cameroun</h1>
+                    <p>J-Go révolutionne les services de transport et paiement. Rejoignez-nous dans cette aventure passionnante avec un potentiel de croissance exceptionnel et un impact social transformateur.</p>
                     <div class="cta-buttons">
-                        <a href="#telecharger" class="btn btn-primary">
-                            <i class="fas fa-download"></i> Télécharger l'App
+                        <a href="#investisseurs" class="btn btn-investor">
+                            <i class="fas fa-chart-line"></i> Devenir Investisseur
                         </a>
-                        <a href="#services" class="btn btn-secondary">
-                            <i class="fas fa-play-circle"></i> Vidéo de présentation
+                        <a href="#levée-de-fonds" class="btn btn-secondary">
+                            <i class="fas fa-file-invoice-dollar"></i> Voir le Business Plan
                         </a>
                     </div>
                 </div>
@@ -1250,16 +1370,16 @@
                     <div class="phone-mockup">
                         <div class="phone-screen">
                             <div class="app-logo">
-                                <i class="fas fa-car"></i>
+                                <i class="fas fa-chart-line"></i>
                             </div>
-                            <h3 style="margin-bottom: 10px; z-index: 1;">J-Go App</h3>
-                            <p style="text-align: center; margin-bottom: 20px; z-index: 1;">Bouger, Payer, Vivre</p>
+                            <h3 style="margin-bottom: 10px; z-index: 1;">J-Go Pro</h3>
+                            <p style="text-align: center; margin-bottom: 20px; z-index: 1;">Plateforme Investisseurs</p>
                             <div style="display: flex; gap: 10px; margin-top: 20px; z-index: 1;">
-                                <button style="background: white; color: var(--primary-color); border: none; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer;">
-                                    <i class="fas fa-taxi"></i> Taxi
+                                <button style="background: white; color: var(--investor-color); border: none; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer;">
+                                    <i class="fas fa-coins"></i> Investir
                                 </button>
                                 <button style="background: rgba(255,255,255,0.2); color: white; border: 1px solid white; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer;">
-                                    <i class="fas fa-wallet"></i> J-Pa
+                                    <i class="fas fa-file-contract"></i> Documents
                                 </button>
                             </div>
                         </div>
@@ -1278,27 +1398,122 @@
                     <div class="stat-label">Utilisateurs actifs</div>
                 </div>
                 <div class="stat-item fade-in delay-1">
-                    <div class="stat-number" id="driverCount">0</div>
-                    <div class="stat-label">Chauffeurs partenaires</div>
+                    <div class="stat-number" id="revenueCount">0</div>
+                    <div class="stat-label">Revenus mensuels (FCFA)</div>
                 </div>
                 <div class="stat-item fade-in delay-2">
-                    <div class="stat-number" id="cityCount">0</div>
-                    <div class="stat-label">Villes couvertes</div>
+                    <div class="stat-number" id="growthCount">0</div>
+                    <div class="stat-label">Croissance mensuelle</div>
                 </div>
                 <div class="stat-item fade-in delay-3">
-                    <div class="stat-number" id="transactionCount">0</div>
-                    <div class="stat-label">Transactions/jour</div>
+                    <div class="stat-number" id="roiCount">0</div>
+                    <div class="stat-label">ROI projeté (5 ans)</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Partners Section -->
+    <!-- Section Investisseurs -->
+    <section class="investors-section" id="investisseurs">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Opportunité d'Investissement Exclusive</h2>
+                <p>Rejoignez les premiers investisseurs dans la prochaine licorne camerounaise</p>
+            </div>
+            
+            <div class="investors-content fade-in">
+                <div class="investment-card">
+                    <div class="investment-badge">SÉRIE A</div>
+                    <h3>Levée de Fonds - Série A</h3>
+                    <p style="margin: 20px 0; color: var(--text-color);">Nous recherchons 500 millions FCFA pour accélérer notre expansion nationale et développer de nouvelles fonctionnalités.</p>
+                    
+                    <div class="investment-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <div class="progress-info">
+                            <span>Objectif: 500M FCFA</span>
+                            <span id="progressAmount">325M FCFA</span>
+                        </div>
+                    </div>
+                    
+                    <div class="investment-details">
+                        <div class="detail-item">
+                            <span>Valuation pré-money:</span>
+                            <strong>2,5 milliards FCFA</strong>
+                        </div>
+                        <div class="detail-item">
+                            <span>Ticket minimum:</span>
+                            <strong>10 millions FCFA</strong>
+                        </div>
+                        <div class="detail-item">
+                            <span>Durée d'investissement:</span>
+                            <strong>3-5 ans</strong>
+                        </div>
+                        <div class="detail-item">
+                            <span>Sortie prévue:</span>
+                            <strong>Acquisition ou IPO</strong>
+                        </div>
+                    </div>
+                    
+                    <a href="#investor-form" class="btn btn-investor" style="width: 100%; margin-top: 30px;">
+                        <i class="fas fa-handshake"></i> Exprimer mon intérêt
+                    </a>
+                </div>
+                
+                <div class="investor-benefits">
+                    <h3 style="margin-bottom: 30px; color: var(--dark-color);">Pourquoi investir dans J-Go ?</h3>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div>
+                            <h4>Marché en Explosion</h4>
+                            <p>Le marché du transport et paiement numérique au Cameroun croît à 35% par an avec un potentiel de 2 millions d'utilisateurs.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Modèle Éprouvé</h4>
+                            <p>Notre technologie a déjà fait ses preuves avec 125,000 utilisateurs actifs et une croissance de 15% mensuelle.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div>
+                            <h4>Équipe Expérimentée</h4>
+                            <p>Notre équipe de direction cumule 50+ années d'expérience dans la tech, la finance et les opérations en Afrique.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div>
+                            <h4>Avantage Concurrentiel</h4>
+                            <p>Solution unique hors-ligne, partenariats exclusifs et technologie brevetée qui nous différencie de la concurrence.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Partenaires -->
     <section class="partners" id="partenaires">
         <div class="container">
             <div class="section-title fade-in">
-                <h2>Nos Partenaires Officiels</h2>
-                <p>Rejoignez les leaders qui nous font confiance</p>
+                <h2>Nos Investisseurs et Partenaires Stratégiques</h2>
+                <p>Ils nous font déjà confiance pour révolutionner le numérique au Cameroun</p>
             </div>
             
             <div class="partners-container">
@@ -1317,12 +1532,12 @@
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Section Services -->
     <section class="services" id="services">
         <div class="container">
             <div class="section-title fade-in">
-                <h2>Nos Services Intégrés</h2>
-                <p>Découvrez l'écosystème complet J-Go conçu spécialement pour le Cameroun</p>
+                <h2>Notre Modèle d'Affaires</h2>
+                <p>Multiples sources de revenus et scalabilité garantie</p>
             </div>
             
             <div class="services-grid">
@@ -1331,52 +1546,111 @@
         </div>
     </section>
 
-    <!-- App Features Section -->
-    <section class="app-features" id="fonctionnalites">
+    <!-- Section Levée de Fonds -->
+    <section class="investor-form-section" id="levée-de-fonds">
         <div class="container">
-            <div class="section-title fade-in">
-                <h2>Fonctionnalités Innovantes</h2>
-                <p>Découvrez ce qui rend J-Go unique</p>
+            <div class="section-title fade-in" style="color: white;">
+                <h2>Devenez Partenaire Investisseur</h2>
+                <p>Prenez rendez-vous avec notre équipe pour discuter des opportunités d'investissement</p>
             </div>
             
-            <div class="features-tabs" id="featuresTabs">
-                <!-- Les onglets seront générés dynamiquement par JavaScript -->
-            </div>
-            
-            <div class="tab-content" id="featuresContent">
-                <!-- Le contenu des onglets sera généré dynamiquement par JavaScript -->
+            <div class="form-container fade-in delay-1">
+                <form id="investorForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="investorName">Nom complet *</label>
+                            <input type="text" id="investorName" name="investorName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="investorEmail">Email professionnel *</label>
+                            <input type="email" id="investorEmail" name="investorEmail" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="investorPhone">Téléphone *</label>
+                            <input type="tel" id="investorPhone" name="investorPhone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="investorCompany">Entreprise / Fond</label>
+                            <input type="text" id="investorCompany" name="investorCompany">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="investmentType">Type d'investissement *</label>
+                            <select id="investmentType" name="investmentType" required>
+                                <option value="">Sélectionnez une option</option>
+                                <option value="angel">Business Angel</option>
+                                <option value="vc">Capital-risque (VC)</option>
+                                <option value="pe">Capital-investissement (PE)</option>
+                                <option value="corporate">Investissement Corporate</option>
+                                <option value="family">Family Office</option>
+                                <option value="individual">Investisseur Individuel</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="investmentAmount">Montant envisagé (FCFA) *</label>
+                            <select id="investmentAmount" name="investmentAmount" required>
+                                <option value="">Sélectionnez un montant</option>
+                                <option value="10-50">10M - 50M FCFA</option>
+                                <option value="50-100">50M - 100M FCFA</option>
+                                <option value="100-250">100M - 250M FCFA</option>
+                                <option value="250-500">250M - 500M FCFA</option>
+                                <option value="500+">500M+ FCFA</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="investorMessage">Message / Questions</label>
+                        <textarea id="investorMessage" name="investorMessage" rows="4" placeholder="Parlez-nous de votre intérêt pour J-Go..."></textarea>
+                    </div>
+                    
+                    <div class="form-group" style="margin-top: 30px;">
+                        <button type="submit" class="btn btn-light" style="width: 100%; padding: 18px;">
+                            <i class="fas fa-paper-plane"></i> Envoyer ma demande d'investissement
+                        </button>
+                    </div>
+                    
+                    <p style="text-align: center; margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">
+                        Nous vous contacterons dans les 48 heures pour organiser une réunion.
+                    </p>
+                </form>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- Section Téléchargement -->
     <section class="cta-section" id="telecharger">
         <div class="container">
-            <h2 class="fade-in">Téléchargez J-Go Maintenant !</h2>
-            <p class="fade-in delay-1">Rejoignez des milliers d'utilisateurs satisfaits et découvrez comment J-Go peut simplifier votre quotidien.</p>
+            <h2 class="fade-in">Documents pour Investisseurs</h2>
+            <p class="fade-in delay-1">Téléchargez notre dossier complet pour prendre une décision éclairée</p>
             
             <div class="app-stores fade-in delay-2">
-                <a href="#" class="store-btn">
-                    <i class="fab fa-google-play fa-2x"></i>
+                <a href="#" class="store-btn" id="downloadBusinessPlan">
+                    <i class="fas fa-file-pdf fa-2x"></i>
                     <div>
-                        <div style="font-size: 0.8rem;">Disponible sur</div>
-                        <div style="font-weight: bold;">Google Play</div>
+                        <div style="font-size: 0.8rem;">Document principal</div>
+                        <div style="font-weight: bold;">Business Plan</div>
                     </div>
                 </a>
                 
-                <a href="#" class="store-btn">
-                    <i class="fab fa-apple fa-2x"></i>
+                <a href="#" class="store-btn" id="downloadPitchDeck">
+                    <i class="fas fa-chart-bar fa-2x"></i>
                     <div>
-                        <div style="font-size: 0.8rem;">Téléchargez sur</div>
-                        <div style="font-weight: bold;">App Store</div>
+                        <div style="font-size: 0.8rem;">Présentation</div>
+                        <div style="font-weight: bold;">Pitch Deck</div>
                     </div>
                 </a>
                 
-                <a href="#" class="store-btn">
-                    <i class="fas fa-hashtag fa-2x"></i>
+                <a href="#" class="store-btn" id="downloadFinancials">
+                    <i class="fas fa-calculator fa-2x"></i>
                     <div>
-                        <div style="font-size: 0.8rem;">Sans smartphone ?</div>
-                        <div style="font-weight: bold;">Composez #1010#</div>
+                        <div style="font-size: 0.8rem;">Projections</div>
+                        <div style="font-weight: bold;">Modèle Financier</div>
                     </div>
                 </a>
             </div>
@@ -1392,55 +1666,76 @@
                         <div class="logo-img">JG</div>
                         <div>
                             <div class="logo-text">J-Go</div>
-                            <div class="logo-slogan">Une seule app pour ta ville</div>
+                            <div class="logo-slogan">Investir dans l'avenir numérique</div>
                         </div>
                     </div>
                     <p style="margin-top: 15px; color: #CBD5E0;">
-                        Votre écosystème numérique complet pour le Cameroun. Transport, paiement et services essentiels réunis.
+                        Société en croissance rapide recherchant des investisseurs stratégiques pour accélérer son expansion panafricaine.
                     </p>
+                    <div class="social-links" style="margin-top: 20px;">
+                        <a href="#" class="social-icon" title="LinkedIn Investisseurs"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon" title="Twitter Actualités"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon" title="Email Direct"><i class="fas fa-envelope"></i></a>
+                        <a href="#" class="social-icon" title="Téléphone"><i class="fas fa-phone"></i></a>
+                    </div>
                 </div>
                 
                 <div class="footer-links">
-                    <h4>Liens Rapides</h4>
+                    <h4>Documents Légaux</h4>
                     <ul>
-                        <li><a href="#accueil">Accueil</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#fonctionnalites">Fonctionnalités</a></li>
-                        <li><a href="#partenaires">Partenaires</a></li>
-                        <li><a href="#telecharger">Télécharger</a></li>
+                        <li><a href="#">Memorandum d'Investissement</a></li>
+                        <li><a href="#">Statuts de la Société</a></li>
+                        <li><a href="#">Due Diligence Package</a></li>
+                        <li><a href="#">Term Sheet</a></li>
+                        <li><a href="#">Contrat d'Investissement</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-links">
-                    <h4>Entreprise</h4>
+                    <h4>Pour les Investisseurs</h4>
                     <ul>
-                        <li><a href="#">À propos</a></li>
-                        <li><a href="#">Carrières</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Presse</a></li>
-                        <li><a href="#">Devenir partenaire</a></li>
+                        <li><a href="#investisseurs">Opportunités</a></li>
+                        <li><a href="#levée-de-fonds">Processus d'Investissement</a></li>
+                        <li><a href="#">FAQ Investisseurs</a></li>
+                        <li><a href="#">Événements Investisseurs</a></li>
+                        <li><a href="#">Espace Investisseurs</a></li>
                     </ul>
                 </div>
                 
-                <!-- La section de contact sera ajoutée par JavaScript -->
+                <!-- Section de contact -->
+                <div class="footer-links">
+                    <h4>Contact Investissement</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-user-tie"></i>
+                            <span>Directeur des Investissements</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+237 6 95 02 14 43</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Siège Social: Akwa, Douala - CMR</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>investors@j-go.cm</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Réunions sur rendez-vous</span>
+                        </div>
+                    </div>
+                </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2024 J-Go. Tous droits réservés. | <a href="#" style="color: #CBD5E0;">Politique de confidentialité</a> | <a href="#" style="color: #CBD5E0;">Conditions d'utilisation</a></p>
-                <p style="margin-top: 10px;">Développé avec ❤️ pour le Cameroun</p>
+                <p>&copy; 2024 J-Go SAS. Tous droits réservés. | <a href="#" style="color: #CBD5E0;">Informations Réglementaires</a> | <a href="#" style="color: #CBD5E0;">Mentions Légales</a></p>
+                <p style="margin-top: 10px;">Ce site est destiné aux investisseurs qualifiés. L'investissement comporte des risques de perte en capital.</p>
             </div>
         </div>
     </footer>
-
-    <!-- Region Selector -->
-    <div class="region-selector">
-        <button class="region-btn">
-            <i class="fas fa-map-marker-alt"></i>
-        </button>
-        <div class="region-menu">
-            <!-- Les régions seront générées dynamiquement par JavaScript -->
-        </div>
-    </div>
 
     <!-- Back to Top Button -->
     <button class="back-to-top" id="backToTop">
@@ -1453,119 +1748,79 @@
             { 
                 id: 'taxi',
                 name: 'Taxi',
-                caption: 'Transport fiable et rapide',
+                caption: 'Opportunité d\'investissement unique',
                 description: 'Commandez un taxi en quelques clics, disponible 24h/24'
             },
             { 
                 id: 'fourgonette',
                 name: 'Fourgonette',
-                caption: 'Livraison de marchandises',
+                caption: 'Marché en croissance exponentielle',
                 description: 'Service de livraison pour entreprises et particuliers'
             },
             { 
                 id: 'eleve',
                 name: 'Élève',
-                caption: 'Éducation et transport scolaire',
+                caption: 'Impact social significatif',
                 description: 'Transport sécurisé pour les élèves et étudiants'
             },
             { 
                 id: 'station',
                 name: 'Station service',
-                caption: 'Services aux stations',
+                caption: 'Retour sur investissement garanti',
                 description: 'Paiement et services dans les stations-service'
             },
             { 
                 id: 'restaurant',
                 name: 'Restaurant',
-                caption: 'Livraison de nourriture',
+                caption: 'Leadership technologique',
                 description: 'Commandez vos plats préférés et faites-vous livrer'
             }
         ];
 
-        // Données pour les partenaires
+        // Données pour les investisseurs et partenaires
         const partners = [
-            { name: "MTN Cameroon", color: "#FFCC00", logo: "M" },
-            { name: "Orange Cameroun", color: "#FF7900", logo: "O" },
-            { name: "Express Union", color: "#003366", logo: "EU" },
-            { name: "UBA Cameroon", color: "#006400", logo: "UBA" },
-            { name: "Afriland First Bank", color: "#8B0000", logo: "AFB" },
-            { name: "Camtel", color: "#1E6FBA", logo: "C" },
-            { name: "Ministry of Transport", color: "#2E8B57", logo: "MT" },
-            { name: "DHL Cameroon", color: "#FF0000", logo: "DHL" }
+            { name: "African Venture Capital", color: "#FFCC00", logo: "AVC", type: "investor" },
+            { name: "Orange Digital Ventures", color: "#FF7900", logo: "ODV", type: "investor" },
+            { name: "Proparco", color: "#003366", logo: "PRO", type: "investor" },
+            { name: "Seedstars", color: "#006400", logo: "SS", type: "accelerator" },
+            { name: "MTN Group", color: "#8B0000", logo: "MTN", type: "strategic" },
+            { name: "Banque Mondiale", color: "#1E6FBA", logo: "BM", type: "investor" },
+            { name: "AFD", color: "#2E8B57", logo: "AFD", type: "investor" },
+            { name: "Cameroun Angels Network", color: "#8A2BE2", logo: "CAN", type: "investor" }
         ];
 
-        // Données pour les services
+        // Données pour le modèle d'affaires
         const services = [
             {
-                icon: "fa-taxi",
-                title: "J-Transport",
-                description: "Commander un taxi, moto-taxi ou bus en quelques clics. Paiement cash ou numérique."
+                icon: "fa-money-bill-wave",
+                title: "Commission Transport",
+                description: "15-20% sur chaque course, avec un volume croissant de transactions journalières."
             },
             {
-                icon: "fa-wallet",
-                title: "J-Pa",
-                description: "Portefeuille numérique sécurisé pour payer vos courses, factures et faire des transferts."
+                icon: "fa-credit-card",
+                title: "Frais de Transaction",
+                description: "0.5-2% sur les paiements numériques via J-Pa, notre portefeuille électronique."
             },
             {
                 icon: "fa-store",
-                title: "J-Market",
-                description: "Achetez des produits locaux en ligne avec livraison rapide à domicile."
+                title: "Marketplace",
+                description: "Commission sur les ventes et abonnements des commerçants sur J-Market."
             },
             {
-                icon: "fa-ticket-alt",
-                title: "J-Ticket",
-                description: "Réservez vos billets de bus, cinéma et événements sans faire la queue."
+                icon: "fa-ad",
+                title: "Publicité Ciblée",
+                description: "Revenus publicitaires auprès des entreprises locales et nationales."
             },
             {
-                icon: "fa-bolt",
-                title: "J-Utilities",
-                description: "Payez vos factures (ENEO, Camwater, CAMTEL) directement depuis l'app."
+                icon: "fa-chart-line",
+                title: "Données Analytics",
+                description: "Vente de données agrégées et insights de marché aux entreprises."
             },
             {
-                icon: "fa-sms",
-                title: "Sans Internet",
-                description: "Tous nos services accessibles via SMS/USSD pour les zones sans connexion."
+                icon: "fa-cogs",
+                title: "Licence Technologie",
+                description: "Licencing de notre technologie SMS/USSD à d'autres opérateurs en Afrique."
             }
-        ];
-
-        // Données pour les fonctionnalités
-        const features = [
-            {
-                id: "offline",
-                title: "Mode Hors-ligne",
-                features: [
-                    { icon: "fa-signal", title: "SMS/USSD", desc: "Accédez aux services via SMS même sans internet" },
-                    { icon: "fa-map-marker-alt", title: "Géolocalisation SMS", desc: "Localisez les chauffeurs par SMS" },
-                    { icon: "fa-history", title: "Historique Local", desc: "Vos données stockées localement" }
-                ]
-            },
-            {
-                id: "payment",
-                title: "Paiement",
-                features: [
-                    { icon: "fa-mobile-alt", title: "Mobile Money", desc: "Intégration MTN Money & Orange Money" },
-                    { icon: "fa-credit-card", title: "Cartes Bancaires", desc: "Paiement sécurisé par carte" },
-                    { icon: "fa-qrcode", title: "QR Code", desc: "Paiement instantané par QR code" }
-                ]
-            },
-            {
-                id: "security",
-                title: "Sécurité",
-                features: [
-                    { icon: "fa-shield-alt", title: "Vérification", desc: "Vérification des chauffeurs partenaires" },
-                    { icon: "fa-user-shield", title: "Données Protégées", desc: "Cryptage de vos données personnelles" },
-                    { icon: "fa-phone-alt", title: "Urgence", desc: "Bouton d'urgence et partage de trajet" }
-                ]
-            }
-        ];
-
-        // Données pour les régions
-        const regions = [
-            { name: "Yaoundé", color: "#1E6FBA" },
-            { name: "Douala", color: "#F4C542" },
-            { name: "Bafoussam", color: "#2E8B57" },
-            { name: "Garoua", color: "#8B0000" },
-            { name: "Maroua", color: "#4B0082" }
         ];
 
         // Variables globales pour le slider
@@ -1585,14 +1840,15 @@
             initStatsCounters();
             initPartnersCarousel();
             initServices();
-            initFeaturesTabs();
-            initRegionSelector();
+            initInvestorForm();
             initScrollAnimations();
             initBackToTop();
-            initFooterContact();
 
             // Navigation fluide pour les ancres
             initSmoothScroll();
+
+            // Simulation de la barre de progression
+            simulateProgressBar();
         });
 
         // Navigation mobile
@@ -1700,52 +1956,13 @@
                         dot.classList.remove('active');
                     }
                 });
-
-                // Mettre à jour le texte du héros (optionnel)
-                updateHeroText(currentSlide);
-            }
-
-            // Fonction pour mettre à jour le texte du héros
-            function updateHeroText(slideIndex) {
-                const heroTitle = document.querySelector('.hero-text h1');
-                const heroDescription = document.querySelector('.hero-text p');
-                
-                // Changer dynamiquement le texte basé sur l'image
-                const texts = [
-                    { 
-                        highlight: "écosystème numérique", 
-                        description: "J-Go réunit transport, paiement numérique et services essentiels dans une seule application. Fonctionne même sans internet grâce à notre technologie SMS/USSD."
-                    },
-                    { 
-                        highlight: "livraison efficace", 
-                        description: "Service de livraison de marchandises pour entreprises et particuliers. Rapidité et sécurité garanties."
-                    },
-                    { 
-                        highlight: "éducation facilitée", 
-                        description: "Transport scolaire sécurisé et solutions éducatives intégrées pour élèves et étudiants."
-                    },
-                    { 
-                        highlight: "services automatisés", 
-                        description: "Paiement et services aux stations-service sans attente. Simplicité et rapidité."
-                    },
-                    { 
-                        highlight: "nourriture à portée", 
-                        description: "Commandez vos plats préférés et faites-vous livrer rapidement. Découvrez les meilleurs restaurants de votre ville."
-                    }
-                ];
-
-                if (texts[slideIndex]) {
-                    const newTitle = `Votre <span class="highlight">${texts[slideIndex].highlight}</span> camerounais`;
-                    heroTitle.innerHTML = newTitle;
-                    heroDescription.textContent = texts[slideIndex].description;
-                }
             }
 
             // Fonction pour démarrer l'intervalle automatique
             function startInterval() {
                 slideInterval = setInterval(() => {
                     goToSlide(currentSlide + 1);
-                }, 5000); // Change toutes les 5 secondes
+                }, 5000);
             }
 
             // Fonction pour réinitialiser l'intervalle
@@ -1765,13 +1982,13 @@
             updateSlide();
         }
 
-        // Compteurs animés
+        // Compteurs animés pour les statistiques
         function initStatsCounters() {
             const counters = [
                 { id: 'userCount', target: 125000, duration: 2000 },
-                { id: 'driverCount', target: 8500, duration: 2000 },
-                { id: 'cityCount', target: 12, duration: 1500 },
-                { id: 'transactionCount', target: 50000, duration: 2500 }
+                { id: 'revenueCount', target: 15000000, duration: 2500 },
+                { id: 'growthCount', target: 15, duration: 1500 },
+                { id: 'roiCount', target: 350, duration: 3000 }
             ];
 
             counters.forEach(counter => {
@@ -1782,10 +1999,26 @@
                 const updateCounter = () => {
                     current += increment;
                     if (current < counter.target) {
-                        element.textContent = Math.floor(current).toLocaleString();
+                        if (counter.id === 'revenueCount') {
+                            element.textContent = Math.floor(current).toLocaleString('fr-FR') + ' FCFA';
+                        } else if (counter.id === 'roiCount') {
+                            element.textContent = Math.floor(current) + '%';
+                        } else if (counter.id === 'growthCount') {
+                            element.textContent = Math.floor(current) + '%';
+                        } else {
+                            element.textContent = Math.floor(current).toLocaleString();
+                        }
                         requestAnimationFrame(updateCounter);
                     } else {
-                        element.textContent = counter.target.toLocaleString();
+                        if (counter.id === 'revenueCount') {
+                            element.textContent = counter.target.toLocaleString('fr-FR') + ' FCFA';
+                        } else if (counter.id === 'roiCount') {
+                            element.textContent = counter.target + '%';
+                        } else if (counter.id === 'growthCount') {
+                            element.textContent = counter.target + '%';
+                        } else {
+                            element.textContent = counter.target.toLocaleString();
+                        }
                     }
                 };
 
@@ -1811,9 +2044,19 @@
             partners.forEach((partner, index) => {
                 const logoDiv = document.createElement('div');
                 logoDiv.className = 'partner-logo';
+                
+                // Ajouter une classe spécifique pour le type
+                logoDiv.classList.add(partner.type);
+                
                 logoDiv.innerHTML = `
                     <div style="font-size: 32px; font-weight: bold; color: ${partner.color}">${partner.logo}</div>
-                    <div class="partner-name">${partner.name}</div>
+                    <div class="partner-name">
+                        ${partner.name}
+                        <div style="font-size: 0.7rem; margin-top: 5px; color: ${partner.color}">
+                            ${partner.type === 'investor' ? 'Investisseur' : 
+                              partner.type === 'strategic' ? 'Partenaire Stratégique' : 'Accélérateur'}
+                        </div>
+                    </div>
                 `;
                 track.appendChild(logoDiv);
             });
@@ -1833,7 +2076,7 @@
             });
         }
 
-        // Services
+        // Services (Modèle d'affaires)
         function initServices() {
             const servicesGrid = document.querySelector('.services-grid');
             
@@ -1851,103 +2094,61 @@
             });
         }
 
-        // Onglets des fonctionnalités
-        function initFeaturesTabs() {
-            const tabsContainer = document.getElementById('featuresTabs');
-            const contentContainer = document.getElementById('featuresContent');
-
-            // Créer les onglets
-            features.forEach((feature, index) => {
-                const tabBtn = document.createElement('button');
-                tabBtn.className = `tab-btn ${index === 0 ? 'active' : ''}`;
-                tabBtn.textContent = feature.title;
-                tabBtn.dataset.tab = feature.id;
-                tabsContainer.appendChild(tabBtn);
-
-                // Créer le contenu de l'onglet
-                const tabContent = document.createElement('div');
-                tabContent.className = `tab-content ${index === 0 ? 'active' : ''}`;
-                tabContent.id = `tab-${feature.id}`;
+        // Formulaire d'investissement
+        function initInvestorForm() {
+            const investorForm = document.getElementById('investorForm');
+            
+            investorForm.addEventListener('submit', function(e) {
+                e.preventDefault();
                 
-                const featureGrid = document.createElement('div');
-                featureGrid.className = 'feature-grid';
+                // Récupérer les données du formulaire
+                const formData = {
+                    name: document.getElementById('investorName').value,
+                    email: document.getElementById('investorEmail').value,
+                    phone: document.getElementById('investorPhone').value,
+                    company: document.getElementById('investorCompany').value,
+                    type: document.getElementById('investmentType').value,
+                    amount: document.getElementById('investmentAmount').value,
+                    message: document.getElementById('investorMessage').value
+                };
                 
-                feature.features.forEach(feat => {
-                    const featureItem = document.createElement('div');
-                    featureItem.className = 'feature-item';
-                    featureItem.innerHTML = `
-                        <div class="feature-icon">
-                            <i class="fas ${feat.icon}"></i>
-                        </div>
-                        <h4>${feat.title}</h4>
-                        <p>${feat.desc}</p>
-                    `;
-                    featureGrid.appendChild(featureItem);
-                });
+                // Simulation d'envoi
+                showNotification(`Merci ${formData.name} ! Nous vous contacterons très rapidement pour discuter de votre investissement.`);
                 
-                tabContent.appendChild(featureGrid);
-                contentContainer.appendChild(tabContent);
+                // Réinitialiser le formulaire
+                investorForm.reset();
+                
+                // Scroll vers le haut
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             });
 
-            // Gérer le clic sur les onglets
-            tabsContainer.addEventListener('click', (e) => {
-                if (e.target.classList.contains('tab-btn')) {
-                    // Désactiver tous les onglets
-                    document.querySelectorAll('.tab-btn').forEach(btn => {
-                        btn.classList.remove('active');
-                    });
-                    
-                    // Activer l'onglet cliqué
-                    e.target.classList.add('active');
-                    
-                    // Cacher tout le contenu
-                    document.querySelectorAll('.tab-content').forEach(content => {
-                        content.classList.remove('active');
-                    });
-                    
-                    // Afficher le contenu correspondant
-                    const tabId = e.target.dataset.tab;
-                    document.getElementById(`tab-${tabId}`).classList.add('active');
-                }
+            // Gestion des téléchargements de documents
+            document.getElementById('downloadBusinessPlan').addEventListener('click', function(e) {
+                e.preventDefault();
+                showNotification('Téléchargement du Business Plan démarré... (document simulé)');
+            });
+
+            document.getElementById('downloadPitchDeck').addEventListener('click', function(e) {
+                e.preventDefault();
+                showNotification('Téléchargement du Pitch Deck démarré... (document simulé)');
+            });
+
+            document.getElementById('downloadFinancials').addEventListener('click', function(e) {
+                e.preventDefault();
+                showNotification('Téléchargement du Modèle Financier démarré... (document simulé)');
             });
         }
 
-        // Sélecteur de région
-        function initRegionSelector() {
-            const regionBtn = document.querySelector('.region-btn');
-            const regionMenu = document.querySelector('.region-menu');
-
-            regionBtn.addEventListener('click', () => {
-                regionMenu.classList.toggle('active');
-            });
-
-            // Remplir le menu des régions
-            regions.forEach(region => {
-                const option = document.createElement('div');
-                option.className = 'region-option';
-                option.innerHTML = `
-                    <div class="region-color" style="background: ${region.color}"></div>
-                    <span>${region.name}</span>
-                `;
-                
-                option.addEventListener('click', () => {
-                    // Changer la couleur du bouton
-                    regionBtn.style.color = region.color;
-                    // Fermer le menu
-                    regionMenu.classList.remove('active');
-                    // Afficher une notification
-                    showNotification(`Région changée pour ${region.name}`);
-                });
-                
-                regionMenu.appendChild(option);
-            });
-
-            // Fermer le menu en cliquant à l'extérieur
-            document.addEventListener('click', (e) => {
-                if (!e.target.closest('.region-selector')) {
-                    regionMenu.classList.remove('active');
-                }
-            });
+        // Simulation de la barre de progression
+        function simulateProgressBar() {
+            const progressFill = document.getElementById('progressFill');
+            const progressAmount = document.getElementById('progressAmount');
+            
+            // Animation de la barre de progression
+            setTimeout(() => {
+                progressFill.style.width = '65%';
+                progressAmount.textContent = '325M FCFA';
+            }, 1000);
         }
 
         // Animations au défilement
@@ -1984,45 +2185,6 @@
             });
         }
 
-        // Remplir la section de contact du footer avec les informations demandées
-        function initFooterContact() {
-            const footerContent = document.querySelector('.footer-content');
-            
-            // Ajouter la section de contact avec les informations spécifiques
-            const contactSection = document.createElement('div');
-            contactSection.className = 'footer-links';
-            contactSection.innerHTML = `
-                <h4>Contactez-nous</h4>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span>+237 6 95 02 14 43</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Siège Social: Akwa, Douala - Cameroun</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>contact@j-go.cm</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-clock"></i>
-                        <span>Lun-Ven: 8h-18h | Sam: 9h-13h</span>
-                    </div>
-                </div>
-                <div class="social-links">
-                    <a href="#" class="social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-icon" title="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="social-icon" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                </div>
-            `;
-            
-            footerContent.appendChild(contactSection);
-        }
-
         // Navigation fluide pour les ancres
         function initSmoothScroll() {
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -2050,80 +2212,95 @@
                 position: fixed;
                 top: 100px;
                 right: 20px;
-                background: var(--primary-color);
+                background: var(--investor-color);
                 color: white;
-                padding: 15px 25px;
-                border-radius: 8px;
-                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                padding: 20px 30px;
+                border-radius: 12px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.3);
                 z-index: 10000;
                 animation: slideIn 0.3s ease;
                 font-weight: 500;
-                max-width: 300px;
+                max-width: 350px;
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255,255,255,0.1);
             `;
             
-            // Ajouter l'animation CSS
-            const style = document.createElement('style');
-            style.textContent = `
-                @keyframes slideIn {
-                    from { transform: translateX(100%); opacity: 0; }
-                    to { transform: translateX(0); opacity: 1; }
-                }
-                @keyframes slideOut {
-                    from { transform: translateX(0); opacity: 1; }
-                    to { transform: translateX(100%); opacity: 0; }
-                }
+            notification.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <i class="fas fa-check-circle" style="font-size: 24px;"></i>
+                    <div>${message}</div>
+                </div>
             `;
-            document.head.appendChild(style);
             
-            notification.textContent = message;
             document.body.appendChild(notification);
             
-            // Supprimer la notification après 3 secondes
+            // Supprimer la notification après 5 secondes
             setTimeout(() => {
                 notification.style.animation = 'slideOut 0.3s ease';
                 setTimeout(() => {
                     document.body.removeChild(notification);
-                    document.head.removeChild(style);
                 }, 300);
-            }, 3000);
+            }, 5000);
         }
 
-        // Simulation d'interactions utilisateur
-        document.querySelectorAll('.service-card, .feature-item, .partner-logo').forEach(element => {
-            element.addEventListener('click', function() {
-                this.style.transform = 'scale(0.95)';
-                setTimeout(() => {
-                    this.style.transform = '';
-                }, 150);
-            });
-        });
-
-        // Gestion des clics sur les boutons de téléchargement
-        document.querySelectorAll('.store-btn').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                e.preventDefault();
-                const store = this.querySelector('.fa-google-play') ? 'Google Play' :
-                            this.querySelector('.fa-apple') ? 'App Store' : 'USSD';
-                showNotification(`Redirection vers ${store}... (simulation)`);
-            });
-        });
-
-        // Gestion du formulaire de contact (simulation)
-        const contactLinks = document.querySelectorAll('.footer-links a[href="#contact"]');
-        contactLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                showNotification('Formulaire de contact à venir bientôt !');
-            });
-        });
+        // Animation CSS pour les notifications
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            @keyframes slideOut {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(100%); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
 
         // Gestion du numéro de téléphone cliquable
-        document.querySelector('.contact-item .fa-phone').parentElement.addEventListener('click', function() {
-            const phoneNumber = '+237695021443';
-            if (confirm(`Voulez-vous appeler le ${phoneNumber} ?`)) {
-                window.location.href = `tel:${phoneNumber}`;
-            }
+        document.querySelectorAll('.contact-item .fa-phone').forEach(icon => {
+            icon.parentElement.addEventListener('click', function() {
+                const phoneNumber = '+237695021443';
+                if (confirm(`Voulez-vous appeler le Directeur des Investissements au ${phoneNumber} ?`)) {
+                    window.location.href = `tel:${phoneNumber}`;
+                }
+            });
         });
+
+        // Effet d'animation sur les cartes de partenaires
+        document.querySelectorAll('.partner-logo').forEach(logo => {
+            logo.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.05)';
+                this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.2)';
+            });
+            
+            logo.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(-5px)';
+                this.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.15)';
+            });
+        });
+
+        // Mise à jour dynamique du montant collecté (simulation)
+        setInterval(() => {
+            const progressAmount = document.getElementById('progressAmount');
+            const currentText = progressAmount.textContent;
+            const currentValue = parseInt(currentText);
+            
+            if (!isNaN(currentValue) && currentValue < 500000000) {
+                // Simuler une augmentation aléatoire
+                const increase = Math.floor(Math.random() * 5000000); // Jusqu'à 5M FCFA
+                const newValue = currentValue + increase;
+                
+                if (newValue <= 500000000) {
+                    progressAmount.textContent = newValue.toLocaleString('fr-FR') + ' FCFA';
+                    
+                    // Mettre à jour la barre de progression
+                    const progressFill = document.getElementById('progressFill');
+                    const percentage = (newValue / 500000000) * 100;
+                    progressFill.style.width = `${Math.min(percentage, 100)}%`;
+                }
+            }
+        }, 10000); // Toutes les 10 secondes
     </script>
 </body>
 </html>
