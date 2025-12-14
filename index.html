@@ -152,12 +152,15 @@
             z-index: 1001;
         }
 
-        /* Hero Section */
+        /* Hero Section avec fond dynamique */
         .hero {
             padding: 150px 0 80px;
             background: linear-gradient(135deg, rgba(30, 111, 186, 0.1), rgba(244, 197, 66, 0.05));
             position: relative;
             overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
         }
 
         .hero-bg {
@@ -166,8 +169,46 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(30, 111, 186, 0.03)"/></svg>');
             background-size: cover;
+            background-position: center;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+            background-color: rgba(0, 0, 0, 0.4);
+            background-blend-mode: overlay;
+        }
+
+        .hero-bg.active {
+            opacity: 1;
+        }
+
+        .hero-bg.taxi {
+            background-image: url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+        }
+
+        .hero-bg.fourgonette {
+            background-image: url('https://images.unsplash.com/photo-1549399542-7e3f8b79c341?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+        }
+
+        .hero-bg.eleve {
+            background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+        }
+
+        .hero-bg.station {
+            background-image: url('https://images.unsplash.com/photo-1563720223488-8f2f62a6e71a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+        }
+
+        .hero-bg.restaurant {
+            background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(30, 111, 186, 0.7), rgba(244, 197, 66, 0.5));
             z-index: -1;
         }
 
@@ -176,17 +217,20 @@
             grid-template-columns: 1fr 1fr;
             gap: 50px;
             align-items: center;
+            position: relative;
+            z-index: 2;
         }
 
         .hero-text h1 {
             font-size: 3rem;
             line-height: 1.2;
             margin-bottom: 20px;
-            color: var(--dark-color);
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .highlight {
-            color: var(--primary-color);
+            color: var(--secondary-color);
             position: relative;
             display: inline-block;
         }
@@ -198,14 +242,15 @@
             left: 0;
             width: 100%;
             height: 8px;
-            background-color: rgba(244, 197, 66, 0.3);
+            background-color: rgba(244, 197, 66, 0.5);
             z-index: -1;
         }
 
         .hero-text p {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             margin-bottom: 30px;
-            color: #4A5568;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
         }
 
         .cta-buttons {
@@ -262,10 +307,12 @@
             border-radius: 40px;
             margin: 0 auto;
             position: relative;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
             padding: 20px;
             border: 10px solid var(--dark-color);
             animation: float 6s ease-in-out infinite;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.9);
         }
 
         @keyframes float {
@@ -309,6 +356,65 @@
             font-size: 48px;
             margin-bottom: 20px;
             z-index: 1;
+        }
+
+        /* Slider Controls */
+        .slider-controls {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            z-index: 10;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid white;
+        }
+
+        .slider-dot.active {
+            background: var(--secondary-color);
+            transform: scale(1.2);
+        }
+
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            color: white;
+            font-size: 24px;
+            z-index: 10;
+            backdrop-filter: blur(5px);
+        }
+
+        .slider-nav:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .slider-nav.prev {
+            left: 20px;
+        }
+
+        .slider-nav.next {
+            right: 20px;
         }
 
         /* Stats Section */
@@ -923,6 +1029,12 @@
                 width: 150px;
                 height: 80px;
             }
+
+            .slider-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -981,6 +1093,10 @@
                 max-width: 300px;
                 justify-content: center;
             }
+
+            .slider-nav {
+                display: none;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1031,6 +1147,28 @@
         .delay-1 { transition-delay: 0.2s; }
         .delay-2 { transition-delay: 0.4s; }
         .delay-3 { transition-delay: 0.6s; }
+
+        /* Image Captions */
+        .image-caption {
+            position: absolute;
+            bottom: 80px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+            z-index: 3;
+        }
+
+        .image-caption.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
@@ -1066,9 +1204,34 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section avec slider d'images -->
     <section class="hero" id="accueil">
-        <div class="hero-bg"></div>
+        <!-- Images de fond -->
+        <div class="hero-bg taxi active" data-caption="Transport fiable et rapide"></div>
+        <div class="hero-bg fourgonette" data-caption="Livraison de marchandises"></div>
+        <div class="hero-bg eleve" data-caption="Éducation et transport scolaire"></div>
+        <div class="hero-bg station" data-caption="Services aux stations"></div>
+        <div class="hero-bg restaurant" data-caption="Livraison de nourriture"></div>
+        
+        <div class="hero-overlay"></div>
+        
+        <!-- Contrôles du slider -->
+        <button class="slider-nav prev" id="prevSlide">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        
+        <button class="slider-nav next" id="nextSlide">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        
+        <!-- Points indicateurs -->
+        <div class="slider-controls" id="sliderDots">
+            <!-- Générés par JavaScript -->
+        </div>
+        
+        <!-- Légende de l'image -->
+        <div class="image-caption" id="imageCaption">Transport fiable et rapide</div>
+
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text fade-in">
@@ -1285,6 +1448,40 @@
     </button>
 
     <script>
+        // Données pour le slider d'images
+        const heroImages = [
+            { 
+                id: 'taxi',
+                name: 'Taxi',
+                caption: 'Transport fiable et rapide',
+                description: 'Commandez un taxi en quelques clics, disponible 24h/24'
+            },
+            { 
+                id: 'fourgonette',
+                name: 'Fourgonette',
+                caption: 'Livraison de marchandises',
+                description: 'Service de livraison pour entreprises et particuliers'
+            },
+            { 
+                id: 'eleve',
+                name: 'Élève',
+                caption: 'Éducation et transport scolaire',
+                description: 'Transport sécurisé pour les élèves et étudiants'
+            },
+            { 
+                id: 'station',
+                name: 'Station service',
+                caption: 'Services aux stations',
+                description: 'Paiement et services dans les stations-service'
+            },
+            { 
+                id: 'restaurant',
+                name: 'Restaurant',
+                caption: 'Livraison de nourriture',
+                description: 'Commandez vos plats préférés et faites-vous livrer'
+            }
+        ];
+
         // Données pour les partenaires
         const partners = [
             { name: "MTN Cameroon", color: "#FFCC00", logo: "M" },
@@ -1371,6 +1568,10 @@
             { name: "Maroua", color: "#4B0082" }
         ];
 
+        // Variables globales pour le slider
+        let currentSlide = 0;
+        let slideInterval;
+
         // Initialisation lorsque le DOM est chargé
         document.addEventListener('DOMContentLoaded', function() {
             // Cacher l'écran de chargement
@@ -1380,6 +1581,7 @@
 
             // Initialiser les composants
             initNavigation();
+            initHeroSlider();
             initStatsCounters();
             initPartnersCarousel();
             initServices();
@@ -1422,6 +1624,145 @@
                     header.classList.remove('scrolled');
                 }
             });
+        }
+
+        // Slider Hero avec images de fond
+        function initHeroSlider() {
+            const heroBgElements = document.querySelectorAll('.hero-bg');
+            const prevBtn = document.getElementById('prevSlide');
+            const nextBtn = document.getElementById('nextSlide');
+            const sliderDots = document.getElementById('sliderDots');
+            const imageCaption = document.getElementById('imageCaption');
+
+            // Créer les points indicateurs
+            heroImages.forEach((image, index) => {
+                const dot = document.createElement('div');
+                dot.className = `slider-dot ${index === 0 ? 'active' : ''}`;
+                dot.dataset.index = index;
+                
+                dot.addEventListener('click', () => {
+                    goToSlide(index);
+                });
+                
+                sliderDots.appendChild(dot);
+            });
+
+            // Navigation précédente
+            prevBtn.addEventListener('click', () => {
+                goToSlide(currentSlide - 1);
+            });
+
+            // Navigation suivante
+            nextBtn.addEventListener('click', () => {
+                goToSlide(currentSlide + 1);
+            });
+
+            // Fonction pour changer de slide
+            function goToSlide(index) {
+                // Réinitialiser l'intervalle
+                resetInterval();
+                
+                // Calculer le nouvel index
+                if (index < 0) {
+                    currentSlide = heroImages.length - 1;
+                } else if (index >= heroImages.length) {
+                    currentSlide = 0;
+                } else {
+                    currentSlide = index;
+                }
+
+                // Mettre à jour l'affichage
+                updateSlide();
+                
+                // Redémarrer l'intervalle
+                startInterval();
+            }
+
+            // Fonction pour mettre à jour le slide actif
+            function updateSlide() {
+                // Mettre à jour les images de fond
+                heroBgElements.forEach((bg, index) => {
+                    if (index === currentSlide) {
+                        bg.classList.add('active');
+                        // Mettre à jour la légende
+                        imageCaption.textContent = heroImages[index].caption;
+                        imageCaption.classList.add('active');
+                    } else {
+                        bg.classList.remove('active');
+                    }
+                });
+
+                // Mettre à jour les points indicateurs
+                document.querySelectorAll('.slider-dot').forEach((dot, index) => {
+                    if (index === currentSlide) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+
+                // Mettre à jour le texte du héros (optionnel)
+                updateHeroText(currentSlide);
+            }
+
+            // Fonction pour mettre à jour le texte du héros
+            function updateHeroText(slideIndex) {
+                const heroTitle = document.querySelector('.hero-text h1');
+                const heroDescription = document.querySelector('.hero-text p');
+                
+                // Changer dynamiquement le texte basé sur l'image
+                const texts = [
+                    { 
+                        highlight: "écosystème numérique", 
+                        description: "J-Go réunit transport, paiement numérique et services essentiels dans une seule application. Fonctionne même sans internet grâce à notre technologie SMS/USSD."
+                    },
+                    { 
+                        highlight: "livraison efficace", 
+                        description: "Service de livraison de marchandises pour entreprises et particuliers. Rapidité et sécurité garanties."
+                    },
+                    { 
+                        highlight: "éducation facilitée", 
+                        description: "Transport scolaire sécurisé et solutions éducatives intégrées pour élèves et étudiants."
+                    },
+                    { 
+                        highlight: "services automatisés", 
+                        description: "Paiement et services aux stations-service sans attente. Simplicité et rapidité."
+                    },
+                    { 
+                        highlight: "nourriture à portée", 
+                        description: "Commandez vos plats préférés et faites-vous livrer rapidement. Découvrez les meilleurs restaurants de votre ville."
+                    }
+                ];
+
+                if (texts[slideIndex]) {
+                    const newTitle = `Votre <span class="highlight">${texts[slideIndex].highlight}</span> camerounais`;
+                    heroTitle.innerHTML = newTitle;
+                    heroDescription.textContent = texts[slideIndex].description;
+                }
+            }
+
+            // Fonction pour démarrer l'intervalle automatique
+            function startInterval() {
+                slideInterval = setInterval(() => {
+                    goToSlide(currentSlide + 1);
+                }, 5000); // Change toutes les 5 secondes
+            }
+
+            // Fonction pour réinitialiser l'intervalle
+            function resetInterval() {
+                clearInterval(slideInterval);
+            }
+
+            // Démarrer le slider automatique
+            startInterval();
+
+            // Pause au survol
+            const heroSection = document.querySelector('.hero');
+            heroSection.addEventListener('mouseenter', resetInterval);
+            heroSection.addEventListener('mouseleave', startInterval);
+
+            // Mettre à jour initialement
+            updateSlide();
         }
 
         // Compteurs animés
@@ -1594,7 +1935,7 @@
                     regionBtn.style.color = region.color;
                     // Fermer le menu
                     regionMenu.classList.remove('active');
-                    // Afficher une notification (simulée)
+                    // Afficher une notification
                     showNotification(`Région changée pour ${region.name}`);
                 });
                 
@@ -1643,11 +1984,11 @@
             });
         }
 
-        // Remplir la section de contact du footer
+        // Remplir la section de contact du footer avec les informations demandées
         function initFooterContact() {
             const footerContent = document.querySelector('.footer-content');
             
-            // Ajouter la section de contact manquante
+            // Ajouter la section de contact avec les informations spécifiques
             const contactSection = document.createElement('div');
             contactSection.className = 'footer-links';
             contactSection.innerHTML = `
@@ -1655,23 +1996,27 @@
                 <div class="contact-info">
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
-                        <span>+237 6 99 99 99 99</span>
+                        <span>+237 6 95 02 14 43</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Siège Social: Akwa, Douala - Cameroun</span>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
                         <span>contact@j-go.cm</span>
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Bastos, Yaoundé - Cameroun</span>
+                        <i class="fas fa-clock"></i>
+                        <span>Lun-Ven: 8h-18h | Sam: 9h-13h</span>
                     </div>
                 </div>
                 <div class="social-links">
-                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                 </div>
             `;
             
@@ -1713,6 +2058,7 @@
                 z-index: 10000;
                 animation: slideIn 0.3s ease;
                 font-weight: 500;
+                max-width: 300px;
             `;
             
             // Ajouter l'animation CSS
@@ -1737,6 +2083,7 @@
                 notification.style.animation = 'slideOut 0.3s ease';
                 setTimeout(() => {
                     document.body.removeChild(notification);
+                    document.head.removeChild(style);
                 }, 300);
             }, 3000);
         }
@@ -1768,6 +2115,14 @@
                 e.preventDefault();
                 showNotification('Formulaire de contact à venir bientôt !');
             });
+        });
+
+        // Gestion du numéro de téléphone cliquable
+        document.querySelector('.contact-item .fa-phone').parentElement.addEventListener('click', function() {
+            const phoneNumber = '+237695021443';
+            if (confirm(`Voulez-vous appeler le ${phoneNumber} ?`)) {
+                window.location.href = `tel:${phoneNumber}`;
+            }
         });
     </script>
 </body>
